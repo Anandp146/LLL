@@ -134,7 +134,7 @@ const WorkPage: React.FC = () => {
     //     </div>
     //   ))}
     // </div>
-    <div className="flex flex-col   pt-12 pb-12 lg:pt-16 lg:pb-16  lg:min-h-screen items-center justify-center">
+    <div className="flex flex-col   pt-12 pb-12 lg:pt-16 lg:pb-16  lg:min-h-screen  justify-between">
       <div className="top-12 flex flex-col lg:flex-row justify-around items-center bg-white p-10">
         <div className="flex flex-col text-4xl my-8 lg:my-16 font-bold lg:mr-8">
           <div className="flex flex-row items-center mb-4 lg:mb-8">
@@ -165,9 +165,9 @@ const WorkPage: React.FC = () => {
           </div>
         </div>
 
-        <div className=" w-full lg:w-[425px] items-center text-[#676767]">
+        <div className=" w-full lg:w-[425px] items-center text-[#676767] ">
           <span className="text-green-700 text-5xl">&ldquo; </span>
-          <span className="w-[400px] text-2xl font-medium h-[99px] justify-center">
+          <span className="w-[400px] text-2xl font-medium h-[99px] justify-center ">
             We craft intuitive products aligned with our client's business
             goals.
           </span>

@@ -151,7 +151,7 @@ const WebsiteForm: React.FC = () => {
     };
 
   return (
-    <div className="max-w-md mx-auto my-20 p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-md mx-auto my-20 p-6 bg-white rounded-lg shadow-md sm:my-28">
       <h1 className="text-3xl font-semibold mb-8 text-center text-blue-600">
         Submit Website Information
       </h1>
