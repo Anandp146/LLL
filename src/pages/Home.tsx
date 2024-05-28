@@ -29,22 +29,22 @@ export const Home: FC = () => {
             alt="Phone Display"
           />
         </div>
-        <div className="p-1 flex-1 relative sm:w-1/2">
+        <div className="p-1 flex-1 relative sm:w-full">
           <h1 className="text-3xl xl:text-6xl font-bold text-left px-12 -mt-6 xl:-mt-20 relative">
             Elevating Brands through Digital{" "}
             <span className="text-[#00CB7C]">Revolution</span>
           </h1>
 
-          <div className="flex flex-col xl:flex-row xl:items-start pt-10">
+          <div className="flex px-14 flex-col xl:flex-row xl:items-start pt-10">
             <div className="p-6 flex flex-col justify-center space-y-8 xl:ml-[300px]">
-              <h2 className="text-lg xl:pr-10 xl:mt-40 xl:text-xl text-left">
+              <h2 className="text-lg xl:pr-10 xl:mt-40 xl:text-xl text-left  ">
                 Embrace innovation with our{" "}
                 <span className="text-green-500">
                   precision-crafted software
                 </span>{" "}
                 solutions, lifting your business with elegance & efficiency.
               </h2>
-              <button className="bg-green-700 text-white text-2xl rounded-2xl px-6 xl:w-full p-4 text-left flex items-center justify-between">
+              <button className="bg-green-700 text-white text-2xl rounded-2xl px-6 xl:w-[80%] sm:w-full p-4 text-left flex items-center justify-between">
                 <span>Get Quotation</span>
                 <FaArrowRight className="ml-2" />
               </button>
