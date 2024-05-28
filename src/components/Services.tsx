@@ -31,7 +31,7 @@ export const Services = () => {
   ];
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center justify-center md:p-14 px-4 lg:mx-[100px] lg:px-20 sm:py-20 ">
+      <div className="flex flex-col lg:flex-row items-center justify-around md:p-14 px-4 lg:mx-[100px] lg:px-20 sm:py-20 ">
         <div className="flex-1 max-w-3xl space-y-8 lg:space-y-16 text-center lg:text-left">
           <h1 className="text-5xl font-inter font-bold lg:text-6xl">
             Unlock Our{" "}

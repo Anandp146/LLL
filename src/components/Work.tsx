@@ -92,14 +92,7 @@ const Work: React.FC = () => {
               <p className=" h-[72.4px] my-6 text-sm md:text-base">
                 {cards[currentCard].content}
               </p>
-              {/* <p className="mb-4 justify-start  text-sm md:text-base">
-                CaptionPoint is a cutting-edge app that enhances your social
-                media with powerful caption tools. Effortlessly craft and
-                customize captions with a vast library of pre-made options.
-                Integrate seamlessly with Instagram to save stories and create
-                sleek grid layouts. Elevate your social media presence with
-                Caption Point.
-              </p> */}
+
               <div className="flex space-x-2 my-10">
                 {tags.map((tag, index) => (
                   <span
