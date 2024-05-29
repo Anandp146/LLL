@@ -180,25 +180,29 @@ const WorkPage: React.FC = () => {
           key={workItem.id}
           className={`   rounded-lg w-full mx-auto p-10 overflow-hidden shadow-lg flex flex-col lg:flex-row items-center justify-center bg-cover bg-center`}
           style={{
-            backgroundImage: `url(${index % 2 === 0 ? bgimg1 : bgimg2})`,
+            backgroundImage: `url(${index % 2 === 0 ? bgimg2 : bgimg1})`,
           }}
         >
           <div className="flex flex-col lg:flex-row  items-center justify-center p-6 lg:p-10 w-full">
-            <div className="w-full sm:w-11/12  lg:w-1/2 mx-0 object-cover overflow-hidden h-[340px] md:mx-6 rounded-2xl flex flex-col justify-center items-center mb-6 lg:mb-0  ">
+            <div className="w-full sm:w-11/12  lg:w-1/2 mx-0 object-cover  h-[340px] md:mx-6 rounded-2xl flex flex-col justify-center items-center mb-6 lg:mb-0  ">
               <img
                 src={workItem.websiteImageUrl}
                 alt={workItem.websiteName}
-                className="w-full h-full md:object-cover object-cover rounded-2xl"
+                className="w-full h-full md:object-cover object-cover  sm:object-cover rounded-2xl"
               />
             </div>
 
             <div className="w-full sm:w-11/12  lg:w-full p-6 md:p-8  shadow-lg rounded-2xl backdrop-filter backdrop-blur-lg bg-gradient-to-r from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.2)] box-border text-white">
-              <div className="h-[40px] w-[50px] my-2 flex justify-start items-center rounded-xl">
-                <img className="object-cover" alt="" src={quote} />
+              <div className="h-[40px] w-[50px] my-2 object-fill flex justify-start items-center rounded-xl">
+                <img
+                  className="object-fill"
+                  alt=""
+                  src={workItem.logoImageUrl}
+                />
               </div>
               <p
-                className={`h-[72.4px] my-6 text-sm md:text-base ${
-                  index % 2 !== 0 ? "text-white" : "text-black"
+                className={`h-[72.4px] my-6 text-sm md:text-[14px]  ${
+                  index % 2 !== 0 ? "text-black" : "text-white"
                 }`}
               >
                 {workItem.description}
@@ -215,10 +219,10 @@ const WorkPage: React.FC = () => {
                 ))}
               </div>
               <button
-                className={`bg-transparent border py-2 px-6 w-full sm:w-[30%] md:w-full sm:text-xl font-bold text-xl rounded-full transition duration-1000 ${
-                  index % 2 !== 0
-                    ? "text-white border-white hover:bg-black"
-                    : "text-black border-black hover:bg-white"
+                className={` bg-transparent border py-2 px-6 w-full sm:w-[30%] md:w-full sm:text-xl font-bold text-xl rounded-full transition duration-1000 ${
+                  index % 2 === 0
+                    ? "text-white border-white hover:bg-black hover:border-white"
+                    : "text-black border-black hover:bg-black hover:text-white"
                 }`}
                 onClick={navigateToWork}
               >

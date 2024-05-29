@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import supabase from "../config/supabaseClient"; // Import the Supabase client
 // const url = REACT_APP_SUPABASE_URL
 // console.log(supabase)
@@ -64,9 +66,10 @@ const WebsiteForm: React.FC = () => {
     null
   );
   const [logoImagePreview, setLogoImagePreview] = useState<string | null>(null);
-
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (values: FormValues) => {
     try {
+      setLoading(true);
       const uploads: { field: string; url: string | null }[] = [];
       //  console.log(values.websiteImage)
       if (values.websiteImage) {
@@ -93,24 +96,14 @@ const WebsiteForm: React.FC = () => {
         }
       }
 
-      let formattedTags: string;
-      if (Array.isArray(values.tags)) {
-        // Format tags array for PostgreSQL
-        formattedTags = `{${values.tags.map((tag) => `"${tag}"`).join(",")}}`;
-      } else if (typeof values.tags === "string") {
-        // Split the string into an array and format
-        formattedTags = `{${values.tags
-          .split(",")
-          .map((tag) => `"${tag.trim()}"`)
-          .join(",")}}`;
-      } else {
-        throw new Error("Invalid tags format");
-      }
+      // Split the tags string into an array
+      const formattedTags = values.tags.split(",").map((tag) => tag.trim());
+
       // Construct the form data to be saved in the database
       const formData = {
         websiteName: values.websiteName,
         description: values.description,
-        tags: formattedTags,
+        tags: formattedTags, // Save tags as an array
         websiteImageUrl:
           process.env.REACT_APP_SUPABASE_URL +
           "storage/v1/object/public/images/" +
@@ -126,9 +119,13 @@ const WebsiteForm: React.FC = () => {
       const { error } = await supabase.from("work").insert([formData]);
       if (error) throw error;
 
+      toast.success("Form submitted successfully!");
       console.log("Form submitted:", formData);
-    } catch (error) {
-      console.error("Error submitting form:", error);
+    } catch (e: any) {
+      console.error("Error submitting form:", e);
+      toast.error(`Error submitting form: ${e.message}`);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -151,149 +148,154 @@ const WebsiteForm: React.FC = () => {
     };
 
   return (
-    <div className="max-w-md mx-auto my-20 p-6 bg-white rounded-lg shadow-md sm:my-28">
-      <h1 className="text-3xl font-semibold mb-8 text-center text-blue-600">
-        Submit Website Information
-      </h1>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {({ setFieldValue }) => (
-          <Form className="space-y-6">
-            <div>
-              <label
-                htmlFor="websiteName"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Website Name
-              </label>
-              <Field
-                id="websiteName"
-                name="websiteName"
-                type="text"
-                className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              />
-              <ErrorMessage
-                name="websiteName"
-                component="div"
-                className="text-red-600 text-sm mt-1"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="description"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Description
-              </label>
-              <Field
-                id="description"
-                name="description"
-                as="textarea"
-                className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              />
-              <ErrorMessage
-                name="description"
-                component="div"
-                className="text-red-600 text-sm mt-1"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="tags"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Tags
-              </label>
-              <Field
-                id="tags"
-                name="tags"
-                type="text"
-                className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              />
-              <ErrorMessage
-                name="tags"
-                component="div"
-                className="text-red-600 text-sm mt-1"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="websiteImage"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Website Image
-              </label>
-              <input
-                id="websiteImage"
-                name="websiteImage"
-                type="file"
-                onChange={handleFileChange(
-                  setFieldValue,
-                  "websiteImage",
-                  setWebsiteImagePreview
-                )}
-                className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                aria-describedby="websiteImageError"
-              />
-              {websiteImagePreview && (
-                <img
-                  src={websiteImagePreview}
-                  alt="Website Preview"
-                  className="mt-2 h-32 w-full object-cover rounded-md"
+    <div className="container mx-auto my-10">
+      <div className="w-full  bg-white rounded-lg shadow-lg mx-auto mt-16 px-8 py-10">
+        <h1 className="text-3xl font-semibold mb-8 text-center text-blue-600">
+          Submit Website Information
+        </h1>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {({ setFieldValue }) => (
+            <Form className="space-y-6">
+              <div className="space-y-2">
+                <label
+                  htmlFor="websiteName"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Website Name
+                </label>
+                <Field
+                  id="websiteName"
+                  name="websiteName"
+                  type="text"
+                  className="p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 />
-              )}
-              <ErrorMessage
-                name="websiteImage"
-                component="div"
-                className="text-red-600 text-sm mt-1"
-                id="websiteImageError"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="logoImage"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Logo Image
-              </label>
-              <input
-                id="logoImage"
-                name="logoImage"
-                type="file"
-                onChange={handleFileChange(
-                  setFieldValue,
-                  "logoImage",
-                  setLogoImagePreview
-                )}
-                className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                aria-describedby="logoImageError"
-              />
-              {logoImagePreview && (
-                <img
-                  src={logoImagePreview}
-                  alt="Logo Preview"
-                  className="mt-2 h-32 w-full object-cover rounded-md"
+                <ErrorMessage
+                  name="websiteName"
+                  component="div"
+                  className="text-red-600 text-sm mt-1"
                 />
-              )}
-              <ErrorMessage
-                name="logoImage"
-                component="div"
-                className="text-red-600 text-sm mt-1"
-                id="logoImageError"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-blue-500 text-white py-2 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              Submit
-            </button>
-          </Form>
-        )}
-      </Formik>
+              </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="description"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Description
+                </label>
+                <Field
+                  id="description"
+                  name="description"
+                  as="textarea"
+                  className="p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                />
+                <ErrorMessage
+                  name="description"
+                  component="div"
+                  className="text-red-600 text-sm mt-1"
+                />
+              </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="tags"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Tags
+                </label>
+                <Field
+                  id="tags"
+                  name="tags"
+                  type="text"
+                  className="p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                />
+                <ErrorMessage
+                  name="tags"
+                  component="div"
+                  className="text-red-600 text-sm mt-1"
+                />
+              </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="websiteImage"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Website Image
+                </label>
+                <input
+                  id="websiteImage"
+                  name="websiteImage"
+                  type="file"
+                  onChange={handleFileChange(
+                    setFieldValue,
+                    "websiteImage",
+                    setWebsiteImagePreview
+                  )}
+                  className="p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  aria-describedby="websiteImageError"
+                />
+                {websiteImagePreview && (
+                  <img
+                    src={websiteImagePreview}
+                    alt="Website Preview"
+                    className="mt-2 h-32 w-full object-cover rounded-md"
+                  />
+                )}
+                <ErrorMessage
+                  name="websiteImage"
+                  component="div"
+                  className="text-red-600 text-sm mt-1"
+                  id="websiteImageError"
+                />
+              </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="logoImage"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Logo Image
+                </label>
+                <input
+                  id="logoImage"
+                  name="logoImage"
+                  type="file"
+                  onChange={handleFileChange(
+                    setFieldValue,
+                    "logoImage",
+                    setLogoImagePreview
+                  )}
+                  className="p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  aria-describedby="logoImageError"
+                />
+                {logoImagePreview && (
+                  <img
+                    src={logoImagePreview}
+                    alt="Logo Preview"
+                    className="mt-2 h-32 w-full object-cover rounded-md"
+                  />
+                )}
+                <ErrorMessage
+                  name="logoImage"
+                  component="div"
+                  className="text-red-600 text-sm mt-1"
+                  id="logoImageError"
+                />
+              </div>
+              <div className="mt-6">
+                <button
+                  type="submit"
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  disabled={loading}
+                >
+                  {loading ? "Submitting..." : "Submit"}
+                </button>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      </div>
     </div>
   );
 };
