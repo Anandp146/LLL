@@ -7,7 +7,7 @@ import {
   FaAngleDown,
   FaAngleUp,
 } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

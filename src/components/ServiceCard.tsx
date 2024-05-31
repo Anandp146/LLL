@@ -7,7 +7,7 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, description }) => {
   return (
-    <div className="mb-4 p-4 md:p-6 lg:p-8 border rounded-lg shadow-lg max-w-lg  mx-auto">
+    <div className="mb-4 p-4 sm:p-6 lg:p-8 border rounded-lg shadow-lg max-w-full md:max-w-3xl lg:max-w-2xl xl:max-w-lg mx-auto">
       <svg
         className="mb-4 mx-auto"
         xmlns="http://www.w3.org/2000/svg"

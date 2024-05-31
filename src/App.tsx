@@ -7,8 +7,10 @@ import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import Footer from "./components/Footer";
 import WorkPage from "./pages/WorkPage";
-import WebsiteForm from "./pages/WebsiteForm";
+// import WebsiteForm from "./pages/WebsiteForm";
 import Admin from "./pages/Admin";
+import DetWork from "./pages/detailedWork";
+import Blog from "./pages/Blog";
 
 const App: React.FC = () => {
   return (
@@ -21,7 +23,8 @@ const App: React.FC = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<Admin />} />
-          {/* <Route path="/websiteform" element={<WebsiteForm />} /> */}
+          <Route path="/detailedwork" element={<DetWork />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </main>
       <Footer />

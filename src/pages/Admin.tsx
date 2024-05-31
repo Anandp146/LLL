@@ -478,7 +478,7 @@ const Admin: React.FC = () => {
     // </div>
     <div className="min-h-screen p-6 bg-gradient-to-br from-blue-100 to-gray-100">
       <ToastContainer />
-      {isAuthenticated ? (
+      {!isAuthenticated ? (
         <>
           {loading ? (
             <div className="flex justify-center items-center h-screen">

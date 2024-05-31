@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import bgEffect from "../assets/bgEffect.png";
-import quote from "../assets/image-removebg-preview (5) 1.png";
-import workimg from "../assets/Rectangle 26.png";
+import bgEffect from "../assets/bgEffect.webp";
+import quote from "../assets/image-removebg-preview (5) 1.webp";
+import workimg from "../assets/Rectangle 26.webp";
 // import { useHistory } from "react-router-dom";
-import workimg1 from "../assets/Rectangle 26.png";
-import workimg2 from "../assets/workimg2.png";
-import workimg3 from "../assets/workimg3.png";
-import workimg4 from "../assets/workimg4.png";
+import workimg1 from "../assets/Rectangle 26.webp";
+import workimg2 from "../assets/workimg2.webp";
+import workimg3 from "../assets/workimg3.webp";
+import workimg4 from "../assets/workimg4.webp";
 // import { useHistory } from "react-router-dom";
-import img1 from "../assets/img1.png";
-import img2 from "../assets/img2.png";
-import img4 from "../assets/img4.png";
-import img3 from "../assets/img3.png";
+import img1 from "../assets/img1.webp";
+import img2 from "../assets/img2.webp";
+import img4 from "../assets/img4.webp";
+import img3 from "../assets/img3.webp";
 
 const Work: React.FC = () => {
   const tags = ["React", "Node", "MySQL"];
@@ -58,22 +58,22 @@ const Work: React.FC = () => {
   ];
   return (
     <div
-      className="   w-full z-[-1] sm:p-10 md:p-8  flex items-center justify-center"
+      className="   w-full -z-10 sm:p-10 md:p-8  flex items-center justify-center"
       style={{
         backgroundImage: `url(${bgEffect})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* <div className="absolute bg-[#006d43a1] bg-opacity-80 z-1 w-full min-h-screen"></div> */}
+      {/* <div className="absolute bg-[#006d43a1] bg-center  bg-opacity-80 justify-center  w-full h-full"></div> */}
 
-      <div className=" flex flex-col items-center sm:my-14  justify-center px-4  md:px-6 lg:px-10">
+      <div className=" relative flex flex-col items-center sm:my-14  justify-center px-4  md:px-6 lg:px-10">
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-center text-white font-sans p-16">
           Our Work
         </h2>
         <div className=" lg:w-full   mx-auto">
           <div className="flex flex-col lg:flex-row  items-center justify-center">
-            <div className="w-full sm:w-11/12  lg:w-1/2 mx-0 h-[340px] md:mx-6 rounded-xl flex flex-col justify-center items-center mb-6 lg:mb-0">
+            <div className="w-full sm:w-11/12  lg:w-1/2 mx-0 h-[380px] md:mx-6 rounded-xl flex flex-col justify-center items-center mb-6 lg:mb-0">
               <img
                 src={cards[currentCard].image}
                 alt="Caption Point Screens"
@@ -81,15 +81,15 @@ const Work: React.FC = () => {
               />
             </div>
 
-            <div className="w-full sm:w-11/12  lg:w-full p-6 md:p-8  shadow-lg rounded-2xl backdrop-filter backdrop-blur-lg bg-gradient-to-r from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.2)] box-border text-white">
-              <div className="h-[40px] w-[50px] my-2 flex justify-start items-center rounded-xl">
+            <div className="w-full sm:w-11/12 my-10 lg:w-full p-6 md:p-8  shadow-lg rounded-2xl backdrop-filter backdrop-blur-lg bg-gradient-to-r from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.2)] box-border text-white">
+              <div className="h-[30px] w-[40px] my-2 flex justify-start items-center rounded-xl">
                 <img
                   className=" object-cover  "
                   alt=""
                   src={cards[currentCard].icon}
                 />
               </div>
-              <p className=" h-[72.4px] my-6 text-sm md:text-base">
+              <p className=" h-[72.4px] mt-4 mb-20 text-sm md:text-base">
                 {cards[currentCard].content}
               </p>
 

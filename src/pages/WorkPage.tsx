@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient"; // Adjust the import path as necessary
-import bgEffect from "../assets/bgEffect.png";
-import quote from "../assets/image-removebg-preview (5) 1.png";
-import bgimg1 from "../assets/workBg1.png";
-import bgimg2 from "../assets/workBg2.png";
-import work1 from "../assets/workicon1.png";
-import work2 from "../assets/workicon2.png";
-import work3 from "../assets/workicon3.png";
+// import bgEffect from "../assets/bgEffect.png";
+// import quote from "../assets/image-removebg-preview (5) 1.png";
+import bgimg1 from "../assets/workBg1.webp";
+import bgimg2 from "../assets/workBg2.webp";
+import work1 from "../assets/workicon1.webp";
+import work2 from "../assets/workicon2.webp";
+import work3 from "../assets/workicon3.webp";
 type WorkItem = {
   id: number;
   websiteName: string;

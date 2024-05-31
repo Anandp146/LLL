@@ -31,38 +31,23 @@ export const Services = () => {
   ];
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center justify-around md:p-14 px-4 lg:mx-[100px] lg:px-20 sm:py-20 ">
-        <div className="flex-1 max-w-3xl space-y-8 lg:space-y-16 text-center lg:text-left">
-          <h1 className="text-5xl font-inter font-bold lg:text-6xl">
+      <div className="flex flex-col lg:flex-row items-center justify-between md:p-14 px-4 lg:mx-20 lg:px-10 sm:py-20 space-y-8 lg:space-y-0">
+        <div className="flex-1 max-w-3xl space-y-8 text-center lg:text-left">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-bold">
             Unlock Our{" "}
             <span className="text-[#00CB7C]">
-              <br className="hidden lg:inline relative" />
+              <br className="hidden lg:inline" />
               Services
-              {/* <svg
-                width="227"
-                className="absolute -bottom-2 sm:bottom-[-67.5rem] sm:left-[25rem]  md:left-36 sm:w-[26%]  md:w-1/3 lg:left-28 w-[45%]  lg:w-3/5"
-                height="13"
-                viewBox="0 0 227 13"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 7.01339C8.69976 9.33472 42.9259 5.66925 50.2316 6.10186C81.2987 7.94151 38.648 13.8935 68.9567 9.2922C88.1829 6.37339 95.3851 6.08635 114.919 4.73465C136.481 2.00007 206.842 2.00001 225 2"
-                  stroke="#00CB7C"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-              </svg> */}
             </span>
           </h1>
-          <p className="text-[#505050] lg:w-[478px] text-lg font-poppins font-medium ">
+          <p className="text-[#505050] lg:w-[478px] text-justify px-4 sm:px-6 lg:px-0 text-lg font-poppins font-medium">
             We craft innovative & intuitive solutions that not only meet but
             exceed our clients' business goals, seamlessly blending creativity
             and functionality to{" "}
             <span className="text-green-500">drive success</span>
           </p>
         </div>
-        <div className="flex-1 max-w-3xl h-auto lg:h-[340px] py-6 px-6 lg:px-10 overflow-y-scroll hide-scrollbar mt-8 lg:mt-0">
+        <div className="flex-1 max-w-3xl h-auto lg:h-[340px] py-6 px-4 sm:px-6 lg:px-10 overflow-y-scroll hide-scrollbar mt-8 lg:mt-0">
           {servicesData.map((service, index) => (
             <ServiceCard
               key={index}
