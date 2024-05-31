@@ -6,6 +6,7 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
         sans: ["DM Sans", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        merriweather: ["Merriweather", "serif"],
       },
       keyframes: {
         marquee: {
