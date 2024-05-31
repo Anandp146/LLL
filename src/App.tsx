@@ -11,6 +11,7 @@ import WorkPage from "./pages/WorkPage";
 import Admin from "./pages/Admin";
 import DetWork from "./pages/detailedWork";
 import Blog from "./pages/Blog";
+import Service from "./pages/Service";
 
 const App: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/admin" element={<Admin />} />
           <Route path="/detailedwork" element={<DetWork />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/service" element={<Service />} />
         </Routes>
       </main>
       <Footer />

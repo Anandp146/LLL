@@ -28,24 +28,20 @@ const Navbar: React.FC = () => {
           <img src={logo} alt="Logo" className="h-12 mr-2" />
         </Link>
         <div className="hidden md:flex space-x-6 items-center">
-          <div
-            onMouseEnter={toggleDropdown}
-            onMouseLeave={toggleDropdown}
-            className="relative"
-          >
+          <div className="relative" onClick={toggleDropdown}>
             <span className="flex items-center cursor-pointer">
               Services {isDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
             </span>
             {isDropdownOpen && (
               <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md">
                 <Link
-                  to="/service1"
+                  to="/service"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Service 1
                 </Link>
                 <Link
-                  to="/service2"
+                  to="/service"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Service 2
