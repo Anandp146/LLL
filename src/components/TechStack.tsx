@@ -7,18 +7,33 @@ import tech5 from "../assets/tech5.webp";
 import tech6 from "../assets/tech6.webp";
 import tech7 from "../assets/tech7.webp";
 
-const techStackImages = [tech1, tech2, tech3, tech4, tech5, tech6, tech7];
+const techStackImages = [
+  tech1,
+  tech2,
+  tech3,
+  tech4,
+  tech5,
+  tech6,
+  tech7,
+  tech1,
+  tech2,
+  tech3,
+  tech4,
+  tech5,
+  tech6,
+  tech7,
+];
 
 export const TechStack: React.FC = () => {
   return (
     <div className="flex justify-center items-center h-22 overflow-hidden pt-10">
-      <div className="flex space-x-20 animate-marquee">
+      <div className="flex space-x-20 px-2 transition-all animate-marquee">
         {techStackImages.map((src, index) => (
           <img
             key={index}
             src={src}
             alt={`Tech ${index + 1}`}
-            className="h-16 object-contain w-auto"
+            className="h-16 object-contain   w-auto"
           />
         ))}
       </div>

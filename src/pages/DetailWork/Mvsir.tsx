@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import hero from "../assets/Hero (1).webp";
-import herovideo from "../assets/mvVideo.mp4";
+import hero from "../../assets/Hero (1).webp";
+import herovideo from "../../assets/mvVideo.mp4";
 import {
   FaFigma,
   FaLongArrowAltRight,
@@ -8,14 +8,14 @@ import {
   FaReact,
 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import homepage from "../assets/webPage.webp";
-import s1 from "../assets/s1.webp";
-import s2 from "../assets/s2.webp";
-import AdminDash from "../assets/Admin Panel Dashboard 1 (1).webp";
-import Quiz from "../assets/Admin Quiz (1) 1 (1).webp";
-import casestudy from "../assets/Rectangle 26.webp";
-import grid from "../assets/grid dots.webp";
-const DetWork: React.FC = () => {
+import homepage from "../../assets/webPage.webp";
+import s1 from "../../assets/s1.webp";
+import s2 from "../../assets/s2.webp";
+import AdminDash from "../../assets/Admin Panel Dashboard 1 (1).webp";
+import Quiz from "../../assets/Admin Quiz (1) 1 (1).webp";
+import casestudy from "../../assets/Rectangle 26.webp";
+import grid from "../../assets/grid dots.webp";
+const Mvsir: React.FC = () => {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -149,7 +149,7 @@ const DetWork: React.FC = () => {
           Intuitive Admin Dashboard
         </h1>
         <div className="flex flex-col lg:flex-row justify-between">
-          <p className="lg:w-1/2 text-[17px] text-[#4C4C4C]">
+          <p className="lg:w-1/2 text-[17px] text-justify text-[#4C4C4C]">
             The admin dashboard showcases a sleek and intuitive interface for
             efficient online educational platform management. A comprehensive
             navigation menu provides access to various sections like orders,
@@ -186,7 +186,7 @@ const DetWork: React.FC = () => {
           Seamless Shopping Experience
         </h1>
         <div className="flex flex-col lg:flex-row justify-between">
-          <p className="lg:w-1/2 text-[17px] text-[#4C4C4C]">
+          <p className="lg:w-1/2 text-[17px] text-justify text-[#4C4C4C]">
             Our e-commerce platform offers a visually appealing, user-friendly
             interface for seamless online shopping of CA books. Homepage
             highlights featured textbooks, deals, & personalized
@@ -226,7 +226,7 @@ const DetWork: React.FC = () => {
             </div>
             <FaQuoteRight className="text-4xl text-[#006D43] mt-4 md:mt-0" />
           </div>
-          <p className="px-0 md:px-10 my-5 font-poppins text-[#727272] w-full md:w-[70%]">
+          <p className="px-0 md:px-10 my-5 text-justify font-poppins text-[#727272] w-full md:w-[70%]">
             Laugh Logic Labs has been an invaluable part of the MV Team. They’ve
             patiently iterated designs to fit our vision and feature
             requirements, and given us guidance on the best design practices
@@ -295,4 +295,4 @@ const DetWork: React.FC = () => {
   );
 };
 
-export default DetWork;
+export default Mvsir;

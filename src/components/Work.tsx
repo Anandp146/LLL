@@ -89,11 +89,11 @@ const Work: React.FC = () => {
                   src={cards[currentCard].icon}
                 />
               </div>
-              <p className=" h-[72.4px] mt-4 mb-20 text-sm md:text-base">
+              <p className=" h-[72.4px] mt-4 text-justify mb-20 text-sm md:text-base">
                 {cards[currentCard].content}
               </p>
 
-              <div className="flex space-x-2 my-10">
+              <div className="flex space-x-2 sm:my-12 my-10">
                 {tags.map((tag, index) => (
                   <span
                     key={index}

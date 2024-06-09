@@ -9,9 +9,13 @@ import Footer from "./components/Footer";
 import WorkPage from "./pages/WorkPage";
 // import WebsiteForm from "./pages/WebsiteForm";
 import Admin from "./pages/Admin";
-import DetWork from "./pages/detailedWork";
+import Mvsir from "./pages/DetailWork/Mvsir";
 import Blog from "./pages/Blog";
 import Service from "./pages/Service";
+import Caption from "./pages/DetailWork/Caption";
+import Shahi from "./pages/DetailWork/Shahi";
+import Sobuj from "./pages/DetailWork/Sobuj";
+import ThreeAi from "./pages/DetailWork/ThreeAi";
 
 const App: React.FC = () => {
   return (
@@ -24,7 +28,11 @@ const App: React.FC = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/detailedwork" element={<DetWork />} />
+          <Route path="/mvsir" element={<Mvsir />} />
+          <Route path="/captionPoint" element={<Caption />} />
+          <Route path="/shahi" element={<Shahi />} />
+          <Route path="/sobujPutra" element={<Sobuj />} />
+          <Route path="/threeAi" element={<ThreeAi />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/service" element={<Service />} />
         </Routes>

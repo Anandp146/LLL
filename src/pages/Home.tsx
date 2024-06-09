@@ -30,8 +30,8 @@ export const Home: FC = () => {
             alt="Phone Display"
           />
         </div>
-        <div className="p-1 flex-1 relative sm:text-justify sm:w-full">
-          <h1 className="text-2xl lg:text-3xl  xl:text-6xl font-bold text-justify px-6  w-full -mt-6 xl:-mt-20 relative">
+        <div className="p-1 flex-1 relative sm:text-start sm:w-full">
+          <h1 className="text-2xl lg:text-3xl  xl:text-6xl font-bold  px-6  w-full -mt-6 xl:-mt-20 relative">
             Elevating Brands through Digital{" "}
             <span className="text-[#00CB7C]">Revolution</span>
           </h1>

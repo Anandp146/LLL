@@ -8,7 +8,29 @@ import blogartical1 from "../assets/blogartical1.png";
 import blogartical2 from "../assets/blogartical2.png";
 import BlogCard from "./BlogCard";
 
-const Tag = ({ text, className }) => (
+type CategoryProps = {
+  name: string;
+  isHighlighted: boolean;
+};
+
+const Category: React.FC<CategoryProps> = ({ name, isHighlighted }) => {
+  return (
+    <article
+      className={`text-sm sm:text-base hover:text-[#006D43] hover:underline text-gray-600 md:text-lg mt-2  font-semibold tracking-tight underline  text-opacity-70 ${
+        isHighlighted ? "text-emerald-800" : ""
+      }`}
+    >
+      {name}
+    </article>
+  );
+};
+
+type TagProps = {
+  text: string;
+  className: string;
+};
+
+const Tag: React.FC<TagProps> = ({ text, className }) => (
   <div
     className={`justify-center px-5 py-1.5 rounded bg-opacity-30 ${className}`}
   >
@@ -16,23 +38,22 @@ const Tag = ({ text, className }) => (
   </div>
 );
 
-const Image = ({ src, alt, className }) => (
+type ImageProps = {
+  src: string;
+  alt: string;
+  className: string;
+};
+
+const Image: React.FC<ImageProps> = ({ src, alt, className }) => (
   <img loading="lazy" src={src} alt={alt} className={className} />
 );
 
-const ArticleMeta = ({ date, readTime }) => (
-  <div className="flex gap-5 justify-between self-start text-sm tracking-tight text-neutral-600">
-    <time>{date}</time>
-    <span>{readTime}</span>
-  </div>
-);
-
-export const Blog = () => {
-  const tags = [
+const Blog: React.FC = () => {
+  const tags: TagProps[] = [
     { text: "Web Dev", className: "bg-stone-300" },
     { text: "Featured", className: "bg-emerald-500" },
   ];
-  const articles = [
+  const articles: { imageSrc: string; title: string }[] = [
     {
       imageSrc: blogartical1,
       title: "Engaging Digital UI/UX Strategies",
@@ -50,48 +71,53 @@ export const Blog = () => {
       title: "Designing for Mobile First",
     },
   ];
-
+  const categories: CategoryProps[] = [
+    { name: "Web Dev", isHighlighted: true },
+    { name: "UI/UX", isHighlighted: false },
+    { name: "App Dev", isHighlighted: false },
+  ];
   return (
     <div>
       <div
-        className="relative w-full bg-center bg-cover h-80 sm:h-96 md:h-[30rem]"
+        className=" flex justify-center  items-center mt-12 px-10 py-16 backdrop-blur-[175px] max-md:px-5 w-full bg-center bg-cover  h-72 sm:h-96 md:h-[25rem] lg:flex-row sm:flex-col  "
         style={{ backgroundImage: `url(${blogbanner1})` }}
       >
-        <div className="absolute transform -translate-y-1/2 left-4 sm:left-8 md:left-14 top-1/2">
-          <h1 className="ml-2 sm:ml-8 md:ml-14 text-4xl sm:text-5xl md:text-6xl font-bold text-[#006D43]">
-            Blogs
-          </h1>
-          <h6 className="ml-2 sm:ml-8 md:ml-14 mt-2 text-sm sm:text-base font-medium md:text-lg text-[#505050]">
-            Checkout the insightful blogs crafted by Laugh Logic Labs
-          </h6>
-        </div>
-        <div className="absolute right-4   sm:right-8 md:right-14 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2 ">
-          <h5 className="text-sm sm:text-base hover:text-[#006D43] hover:underline text-gray-600 md:text-lg mr-2 sm:mr-8 md:mr-14">
-            Web Dev
-          </h5>
-          <h5 className="text-sm sm:text-base hover:text-[#006D43] hover:underline text-gray-600 md:text-lg mr-2 sm:mr-8 md:mr-14">
-            UI/UX
-          </h5>
-          <h5 className="text-sm sm:text-base hover:text-[#006D43] hover:underline text-gray-600 md:text-lg mr-2 sm:mr-8 md:mr-14">
-            App Dev
-          </h5>
+        <div className="flex gap-5 justify-between items-start w-full max-w-[1230px] max-md:flex-wrap max-md:max-w-full">
+          <header className="flex flex-col max-md:max-w-full">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#006D43]  tracking-tighter  max-md:max-w-full max-md:text-4xl">
+              Blogs
+            </h1>
+            <p className="mt-4 text-sm sm:text-base font-medium md:text-lg text-[#505050] tracking-tight  max-md:max-w-full">
+              Checkout the insightful blogs crafted by Laugh Logic Labs
+            </p>
+          </header>
+          <aside className="flex flex-col items-center   ">
+            {categories.map((category, index) => (
+              <Category
+                key={index}
+                name={category.name}
+                isHighlighted={category.isHighlighted}
+              />
+            ))}
+          </aside>
         </div>
       </div>
-      <section className="w-full px-10 justify-between">
+
+      <section className="w-full  lg:px-8 md:px-8 px-4 justify-between">
         <div className="flex flex-col md:flex-row gap-5">
           <Image
             src={blogImage1}
             alt="CRM Power with Web"
             className="w-full md:w-2/3 lg:mx-16 shadow-sm md:mt-10"
           />
-          <div className="flex flex-col mx-5 md:ml-0 w-full md:w-1/3">
+          <div className="flex flex-col lg:mx-4 mx-2 md:ml-0  md:w-full lg:w-1/3">
             <div className="flex flex-col grow px-5 mt-1 text-black md:mt-10 md:max-w-full">
               <div className="flex mb-4 space-x-4 text-black">
                 <span>May 30, 2024</span>
                 <span>5 min read</span>
               </div>
-              <h1 className="mt-5 text-5xl font-bold tracking-tighter leading-10 md:text-4xl md:leading-9">
-                Unleashing CRM Power <br /> with Web
+              <h1 className="mt-5 md:text-4xl font-bold tracking-tighter leading-10 text-3xl md:leading-9">
+                Unleashing CRM Power with Web
               </h1>
               <div className="flex gap-2 self-end mt-12 text-xs max-md:mt-10 max-md:mr-2">
                 {tags.map((tag) => (
@@ -115,19 +141,19 @@ export const Blog = () => {
         </div>
       </section>
 
-      <section className="flex lg:px-10 lg:flex-row md:flex-row flex-col items-center justify-center lg:gap-5 md:gap-3 mt-16 w-full text-justify md:flex-wrap md:mt-10 md:max-w-full">
-        <aside className="flex flex-col items-center lg:items-start lg:justify-start justify-center self-start px-4 my-16 text-lg font-bold leading-9 text-emerald-800 mx-7 md:text-base md:leading-7">
+      <section className="flex lg:px-10 lg:flex-row md:flex-row flex-col items-center justify-center lg:gap-5 md:gap-3 lg:mt-16 md:mt-10 w-full text-justify md:flex-wrap  md:max-w-full">
+        <aside className="flex flex-col  items-center lg:items-start lg:justify-start justify-center self-start px-4 my-10 text-lg font-bold leading-9 text-emerald-800 mx-7 md:text-base md:leading-7">
           <h2 className="self-stretch text-center lg:text-left md:text-xl">
             Share this article
           </h2>
-          <div className="flex flex-row lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 mt-4">
-            <FaLinkedin size={24} className="w-6 h-6 md:w-6 md:h-6" />
-            <FaTwitter size={24} className="w-6 h-6 md:w-6 md:h-6" />
-            <FaWhatsapp size={24} className="w-6 h-6 md:w-6 md:h-6" />
-            <FaLink size={24} className="w-6 h-6 md:w-6 md:h-6" />
+
+          <div className="flex flex-row items-center space-x-4 mt-4 md:flex-col md:items-start md:space-x-0 md:space-y-3 lg:items-center lg:space-y-4">
+            <FaLinkedin size={24} className="w-6 h-6" />
+            <FaTwitter size={24} className="w-6 h-6" />
+            <FaWhatsapp size={24} className="w-6 h-6" />
+            <FaLink size={24} className="w-6 h-6" />
           </div>
         </aside>
-
         <div className="flex flex-col grow shrink-0 lg:px-20 px-10 text-base leading-9 basis-0 text-black text-opacity-80 w-full md:max-w-full">
           <p className="md:max-w-full">
             By integrating CRM with web-based solutions, companies can unlock a
@@ -191,19 +217,21 @@ export const Blog = () => {
         </div>
       </section>
 
-      <div className="flex-col py-20 mx-14 my-10">
-        <h1 className=" font-inter mx-3 my-6 text-[#006D43] text-4xl font-bold">
+      <div className="flex-col py-20 mx-14 ">
+        <h1 className=" font-inter mx-3 lg:text-4xl my-6 text-[#006D43] text-2xl font-bold">
           Checkout Trending articles
         </h1>
 
-        <div className="flex  overflow-x-scroll hide-scrollbar justify-center py-4">
-          {articles.map((article, index) => (
-            <BlogCard
-              key={index}
-              imageSrc={article.imageSrc}
-              title={article.title}
-            />
-          ))}
+        <div className="overflow-x-auto whitespace-nowrap hide-scrollbar py-4">
+          <div className="flex flex-row space-x-4 ">
+            {articles.map((blog, index) => (
+              <BlogCard
+                key={index}
+                imageSrc={blog.imageSrc}
+                title={blog.title}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
