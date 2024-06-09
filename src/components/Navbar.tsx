@@ -105,9 +105,7 @@ const Navbar: React.FC = () => {
           <Link to="/blog" className="block px-4 py-2 hover:bg-gray-100">
             Blog
           </Link>
-          <Link to="/about" className="block px-4 py-2 hover:bg-gray-100">
-            About Us
-          </Link>
+
           <Link
             to="/contact"
             className="block px-4 py-2 flex items-center space-x-1 hover:bg-gray-100"
