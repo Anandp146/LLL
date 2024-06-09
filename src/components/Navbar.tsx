@@ -10,6 +10,7 @@ import {
 import logo from "../assets/logo.webp";
 
 const Navbar: React.FC = () => {
+  const whatsappLink = `https://wa.me/919328808448?text="hey"`;
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -58,13 +59,14 @@ const Navbar: React.FC = () => {
           <Link to="/about" className="hover:text-gray-700">
             About Us
           </Link>
-          <Link
-            to="/contact"
-            className="flex items-center space-x-1 hover:text-gray-700"
+          <div
+            className="px-4 py-2 flex items-center space-x-1 hover:bg-gray-100"
           >
-            <span>Contact Us</span>
+             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          Contact Us
+             </a>
             <FaWhatsapp className="text-green-500" />
-          </Link>
+          </div>
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-xl focus:outline-none">
@@ -110,13 +112,14 @@ const Navbar: React.FC = () => {
           <Link to="/about" className="block px-4 py-2 hover:bg-gray-100">
             About Us
           </Link>
-          <Link
-            to="/contact"
-            className="block px-4 py-2 flex items-center space-x-1 hover:bg-gray-100"
+          <div
+            className="px-4 py-2 flex items-center space-x-1 hover:bg-gray-100"
           >
-            <span>Contact Us</span>
+      <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          Contact Us on WhatsApp
+             </a>
             <FaWhatsapp className="text-green-500" />
-          </Link>
+          </div>
         </div>
       )}
     </nav>

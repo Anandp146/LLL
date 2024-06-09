@@ -12,8 +12,10 @@ import Admin from "./pages/Admin";
 import DetWork from "./pages/detailedWork";
 import Blog from "./pages/Blog";
 import Service from "./pages/Service";
+import WebsiteForm from "./pages/WebsiteForm";
 
 const App: React.FC = () => {
+  // console.log(import.meta.env.VITE_SUPABASE_URL);
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -27,6 +29,7 @@ const App: React.FC = () => {
           <Route path="/detailedwork" element={<DetWork />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/service" element={<Service />} />
+          <Route path="/form" element={<WebsiteForm/>}/>
         </Routes>
       </main>
       <Footer />

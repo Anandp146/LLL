@@ -23,8 +23,7 @@ const WorkPage: React.FC = () => {
   };
   useEffect(() => {
     const fetchWorkItems = async () => {
-      const { data, error } = await supabase.from("work").select("*");
-
+      const { data, error } = await supabase.from("work").select("*");    
       if (error) {
         console.error("Error fetching work items:", error);
       } else {
