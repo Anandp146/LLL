@@ -185,10 +185,22 @@ const Navbar: React.FC = () => {
           <Link to="/blog" className="hover:text-gray-700">
             Blog
           </Link>
+<<<<<<< HEAD
           <div className="px-4 py-2 flex items-center space-x-1 hover:bg-gray-100">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               Contact Us
             </a>
+=======
+          <Link to="/about" className="hover:text-gray-700">
+            About Us
+          </Link>
+          <div
+            className="px-4 py-2 flex items-center space-x-1 hover:bg-gray-100"
+          >
+             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          Contact Us
+             </a>
+>>>>>>> fc65d9696e75e187d07a09620109318d546c959b
             <FaWhatsapp className="text-green-500" />
           </div>
         </div>
@@ -233,10 +245,22 @@ const Navbar: React.FC = () => {
           <Link to="/blog" className="block px-4 py-2 hover:bg-gray-100">
             Blog
           </Link>
+<<<<<<< HEAD
           <div className="px-4 py-2 flex items-center space-x-1 hover:bg-gray-100">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               Contact Us on WhatsApp
             </a>
+=======
+          <Link to="/about" className="block px-4 py-2 hover:bg-gray-100">
+            About Us
+          </Link>
+          <div
+            className="px-4 py-2 flex items-center space-x-1 hover:bg-gray-100"
+          >
+      <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          Contact Us on WhatsApp
+             </a>
+>>>>>>> fc65d9696e75e187d07a09620109318d546c959b
             <FaWhatsapp className="text-green-500" />
           </div>
         </div>

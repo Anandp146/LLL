@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import supabase from "../config/supabaseClient"; // Import the Supabase client
+import { log } from "console";
 // const url = REACT_APP_SUPABASE_URL
 // console.log(supabase)
 // https://qhtxrkapznipvdydeacv.supabase.co/storage/v1/object/public/images/${values.websiteName}/websiteImage
@@ -70,7 +71,7 @@ const WebsiteForm: React.FC = () => {
   const handleSubmit = async (values: FormValues) => {
     try {
       setLoading(true);
-      const uploads: { field: string; url: string | null }[] = [];
+      // const uploads: { field: string; url: string | null }[] = [];
       //  console.log(values.websiteImage)
       if (values.websiteImage) {
         const folderPath = `${values.websiteName}/websiteImage`;
@@ -105,20 +106,20 @@ const WebsiteForm: React.FC = () => {
         description: values.description,
         tags: formattedTags, // Save tags as an array
         websiteImageUrl:
-          process.env.REACT_APP_SUPABASE_URL +
+        import.meta.env.VITE_SUPABASE_URL +
           "storage/v1/object/public/images/" +
           values.websiteName +
           "/websiteImage",
         logoImageUrl:
-          process.env.REACT_APP_SUPABASE_URL +
+        import.meta.env.VITE_SUPABASE_URL +
           "storage/v1/object/public/images/" +
           values.websiteName +
           "/logoImage",
       };
 
       const { error } = await supabase.from("work").insert([formData]);
+      
       if (error) throw error;
-
       toast.success("Form submitted successfully!");
       console.log("Form submitted:", formData);
     } catch (e: any) {

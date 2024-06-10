@@ -12,12 +12,17 @@ import Admin from "./pages/Admin";
 import Mvsir from "./pages/DetailWork/Mvsir";
 import Blog from "./pages/Blog";
 import Service from "./pages/Service";
+<<<<<<< HEAD
 import Caption from "./pages/DetailWork/Caption";
 import Shahi from "./pages/DetailWork/Shahi";
 import Sobuj from "./pages/DetailWork/Sobuj";
 import ThreeAi from "./pages/DetailWork/ThreeAi";
+=======
+import WebsiteForm from "./pages/WebsiteForm";
+>>>>>>> fc65d9696e75e187d07a09620109318d546c959b
 
 const App: React.FC = () => {
+  // console.log(import.meta.env.VITE_SUPABASE_URL);
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -35,6 +40,7 @@ const App: React.FC = () => {
           <Route path="/threeAi" element={<ThreeAi />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/service" element={<Service />} />
+          <Route path="/form" element={<WebsiteForm/>}/>
         </Routes>
       </main>
       <Footer />
