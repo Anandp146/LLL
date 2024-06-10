@@ -6,6 +6,7 @@ import blogcenter from "../assets/blogcenter.png";
 import blogcenter2 from "../assets/blogcenter2.png";
 import blogartical1 from "../assets/blogartical1.png";
 import blogartical2 from "../assets/blogartical2.png";
+import blogartical3 from "../assets/blogartical3.png";
 import BlogCard from "./BlogCard";
 
 type CategoryProps = {
@@ -53,22 +54,35 @@ const Blog: React.FC = () => {
     { text: "Web Dev", className: "bg-stone-300" },
     { text: "Featured", className: "bg-emerald-500" },
   ];
-  const articles: { imageSrc: string; title: string }[] = [
+  const articles: {
+    imageSrc: string;
+    title: string;
+    readTime: string;
+    date: string;
+  }[] = [
     {
       imageSrc: blogartical1,
       title: "Engaging Digital UI/UX Strategies",
+      readTime: "3 Min read",
+      date: "27 May 2024",
     },
     {
       imageSrc: blogartical2,
-      title: "Effective Web Development Practices",
+      title: "Building Robust,Scalable Apps ",
+      readTime: "3 Min read",
+      date: "27 May 2024",
     },
     {
-      imageSrc: blogartical1,
-      title: "Latest Trends in Technology",
+      imageSrc: blogartical3,
+      title: "Responsive Design Best Practices",
+      readTime: "3 Min read",
+      date: "27 May 2024",
     },
     {
       imageSrc: blogartical2,
       title: "Designing for Mobile First",
+      readTime: "3 Min read",
+      date: "27 May 2024",
     },
   ];
   const categories: CategoryProps[] = [
@@ -142,16 +156,22 @@ const Blog: React.FC = () => {
       </section>
 
       <section className="flex lg:px-10 lg:flex-row md:flex-row flex-col items-center justify-center lg:gap-5 md:gap-3 lg:mt-16 md:mt-10 w-full text-justify md:flex-wrap  md:max-w-full">
-        <aside className="flex flex-col  items-center lg:items-start lg:justify-start justify-center self-start px-4 my-10 text-lg font-bold leading-9 text-emerald-800 mx-7 md:text-base md:leading-7">
+        <aside className="flex flex-col  items-center lg:items-start lg:justify-start justify-center self-start px-4 my-10 text-lg font-bold leading-9 text-emerald-800 mx-7 md:text-base space-x-4 mt-4 md:flex-col md:items-start md:space-x-0 md:space-y-3 lg:space-y-4 md:leading-7">
           <h2 className="self-stretch text-center lg:text-left md:text-xl">
             Share this article
           </h2>
 
-          <div className="flex flex-row items-center space-x-4 mt-4 md:flex-col md:items-start md:space-x-0 md:space-y-3 lg:items-center lg:space-y-4">
-            <FaLinkedin size={24} className="w-6 h-6" />
-            <FaTwitter size={24} className="w-6 h-6" />
-            <FaWhatsapp size={24} className="w-6 h-6" />
-            <FaLink size={24} className="w-6 h-6" />
+          <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
+            <FaLinkedin size={24} className="text-black" />
+          </div>
+          <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
+            <FaTwitter size={24} className="text-black" />
+          </div>
+          <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
+            <FaWhatsapp size={24} className="text-black" />
+          </div>
+          <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
+            <FaLink size={24} className="text-black" />
           </div>
         </aside>
         <div className="flex flex-col grow shrink-0 lg:px-20 px-10 text-base leading-9 basis-0 text-black text-opacity-80 w-full md:max-w-full">
@@ -222,13 +242,15 @@ const Blog: React.FC = () => {
           Checkout Trending articles
         </h1>
 
-        <div className="overflow-x-auto whitespace-nowrap hide-scrollbar py-4">
-          <div className="flex flex-row space-x-4 ">
+        <div className="flex md:overflow-y-scroll  lg:overflow-x-scroll hide-scrollbar md:space-y-4 lg:space-x-4 justify-center py-4">
+          <div className="flex lg:flex-row flex-col space-x-4 ">
             {articles.map((blog, index) => (
               <BlogCard
                 key={index}
                 imageSrc={blog.imageSrc}
                 title={blog.title}
+                readTime={blog.readTime}
+                date={blog.date}
               />
             ))}
           </div>

@@ -22,6 +22,7 @@
     "@types/node": "^20.12.12",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.2",
+    "emailjs-com": "^3.2.0",
     "formik": "^2.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import supabase from "../config/supabaseClient"; // Adjust the import path as necessary
 import bgimg1 from "../assets/workBg1.webp";
 import bgimg2 from "../assets/workBg2.webp";
@@ -17,9 +18,28 @@ type WorkItem = {
 
 const WorkPage: React.FC = () => {
   const [workItems, setWorkItems] = useState<WorkItem[]>([]);
+  const navigate = useNavigate();
 
-  const navigateToWork = () => {
-    window.location.href = "/mvsir";
+  const navigateToWork = (websiteName: string) => {
+    switch (websiteName.toLowerCase()) {
+      case "mvsir.in":
+        navigate("/mvsir");
+        break;
+      case "caption point":
+        navigate("/captionPoint");
+        break;
+      case "shahiethnicware.in":
+        navigate("/shahi");
+        break;
+      case "sobujpotro.com":
+        navigate("/sobujPutra");
+        break;
+      case "apsthreeai.ai":
+        navigate("/threeAi");
+        break;
+      default:
+        console.error(`No route found for website name: ${websiteName}`);
+    }
   };
 
   useEffect(() => {
@@ -38,7 +58,7 @@ const WorkPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col pt-12  lg:min-h-screen justify-between">
+    <div className="flex flex-col pt-12 lg:min-h-screen justify-between">
       <div className="flex flex-col lg:flex-row justify-around items-center bg-white p-6 lg:p-10">
         <div className="flex flex-col text-3xl lg:text-4xl my-4 lg:my-8 font-bold lg:mr-8">
           <div className="flex flex-row items-center mb-2 lg:mb-4">
@@ -69,13 +89,21 @@ const WorkPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-[425px] items-center text-[#676767]">
-          <span className="text-green-700 text-3xl lg:text-5xl">&ldquo; </span>
-          <span className="w-[300px] lg:w-[400px] text-lg lg:text-2xl font-medium h-auto justify-center">
-            We craft intuitive products aligned with our client's business
-            goals.
+        <div className="w-full lg:w-[445px] flex items-start text-[#676767]">
+          <span className="text-green-700 text-3xl -mt-2 lg:text-4xl">
+            &ldquo;
           </span>
-          <span className="text-green-700 text-3xl lg:text-5xl">&rdquo;</span>
+          <div className=" w-full lg:w-[400px] text-lg lg:text-2xl font-medium h-auto flex flex-col justify-center">
+            <span className="block">
+              &nbsp;We craft intuitive products aligned
+            </span>
+            <span className="block">
+              with our client's business goals.&nbsp;
+              <span className=" text-green-700 text-3xl lg:text-4xl">
+                &rdquo;
+              </span>
+            </span>
+          </div>
         </div>
       </div>
 
@@ -88,7 +116,7 @@ const WorkPage: React.FC = () => {
           }}
         >
           <div className="flex flex-col lg:flex-row items-center justify-center w-full">
-            <div className="w-full sm:w-11/12  lg:w-1/2 mx-0  md:mx-6 rounded-2xl align-middle flex flex-col justify-center items-center ">
+            <div className="w-full sm:w-11/12 lg:w-1/2 mx-0 md:mx-6 rounded-2xl align-middle flex flex-col justify-center items-center ">
               <img
                 src={workItem.websiteImageUrl}
                 alt={workItem.websiteName}
@@ -128,7 +156,7 @@ const WorkPage: React.FC = () => {
                     ? "text-white border-white hover:bg-black hover:border-white"
                     : "text-black border-black hover:bg-black hover:text-white"
                 }`}
-                onClick={navigateToWork}
+                onClick={() => navigateToWork(workItem.websiteName)}
               >
                 SEE CASE STUDY
               </button>
