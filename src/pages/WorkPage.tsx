@@ -16,6 +16,12 @@ type WorkItem = {
   logoImageUrl: string;
 };
 
+const Tag: React.FC<{ text: string }> = ({ text }) => (
+  <div className="bg-gray-800 text-white text-xs font-semibold px-2 py-1 rounded">
+    {text}
+  </div>
+);
+
 const WorkPage: React.FC = () => {
   const [workItems, setWorkItems] = useState<WorkItem[]>([]);
   const navigate = useNavigate();
@@ -59,6 +65,7 @@ const WorkPage: React.FC = () => {
   return (
     <div className="flex flex-col pt-12 lg:min-h-screen justify-between">
       <div className="flex flex-col lg:flex-row justify-around items-center bg-white p-6 lg:p-10">
+        {/* Content from the first snippet */}
         <div className="flex flex-col text-3xl lg:text-4xl my-4 lg:my-8 font-bold lg:mr-8">
           <div className="flex flex-row items-center mb-2 lg:mb-4">
             <img
@@ -92,7 +99,7 @@ const WorkPage: React.FC = () => {
           <span className="text-green-700 text-3xl -mt-2 lg:text-4xl">
             &ldquo;
           </span>
-          <div className=" w-full lg:w-[400px] text-lg lg:text-2xl font-medium h-auto flex flex-col justify-center">
+          <div className="w-full lg:w-[400px] text-lg lg:text-2xl font-medium h-auto flex flex-col justify-center">
             <span className="block">
               &nbsp;We craft intuitive products aligned
             </span>
@@ -106,6 +113,7 @@ const WorkPage: React.FC = () => {
         </div>
       </div>
 
+      {/* Mapping work items */}
       {workItems.map((workItem, index) => (
         <div
           key={workItem.id}
@@ -115,7 +123,7 @@ const WorkPage: React.FC = () => {
           }}
         >
           <div className="flex flex-col lg:flex-row items-center justify-center w-full">
-            <div className="w-full sm:w-11/12 lg:w-1/2 mx-0 md:mx-6 rounded-2xl align-middle flex flex-col justify-center items-center ">
+            <div className="w-full sm:w-11/12 over lg:w-1/2 mx-0 md:mx-6 rounded-2xl align-middle flex flex-col justify-center items-center ">
               <img
                 src={workItem.websiteImageUrl}
                 alt={workItem.websiteName}
@@ -124,7 +132,7 @@ const WorkPage: React.FC = () => {
             </div>
 
             <div className="w-full h-[340px] sm:w-11/12 lg:w-full p-4 justify-center align-middle lg:p-8 shadow-lg rounded-2xl backdrop-filter backdrop-blur-lg bg-gradient-to-r from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.2)] box-border text-white">
-              <div className="h-[30px] lg:h-[40px] w-[30px] lg:w-[50px] my-2 object-fill flex justify-start items-center rounded-xl">
+              <div className="h-[30px] lg:h-[40px]  w-[30px] lg:w-[50px] my-2 object-fill flex justify-start items-center rounded-xl">
                 <img
                   className="object-fill"
                   alt=""
@@ -141,12 +149,7 @@ const WorkPage: React.FC = () => {
 
               <div className="flex flex-wrap space-x-2 my-4 lg:my-10">
                 {workItem.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="bg-gray-800 text-white text-xs font-semibold px-2 py-1 rounded"
-                  >
-                    #{tag}
-                  </span>
+                  <Tag key={tag} text={`#${tag}`} />
                 ))}
               </div>
               <button

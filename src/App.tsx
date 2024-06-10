@@ -10,6 +10,7 @@ import WorkPage from "./pages/WorkPage";
 import Admin from "./pages/Admin";
 import Mvsir from "./pages/DetailWork/Mvsir";
 import Blog from "./pages/Blog";
+import Blog2 from "./pages/Blogs/blog1";
 import Service from "./pages/Service";
 import Caption from "./pages/DetailWork/Caption";
 import Shahi from "./pages/DetailWork/Shahi";
@@ -35,6 +36,7 @@ const App: React.FC = () => {
           <Route path="/sobujPutra" element={<Sobuj />} />
           <Route path="/threeAi" element={<ThreeAi />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog2" element={<Blog2 />} />
           <Route path="/service" element={<Service />} />
           <Route path="/form" element={<WebsiteForm />} />
         </Routes>

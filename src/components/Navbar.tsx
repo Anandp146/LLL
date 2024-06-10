@@ -56,9 +56,7 @@ const Navbar: React.FC = () => {
           <Link to="/blog" className="hover:text-gray-700">
             Blog
           </Link>
-          <Link to="/about" className="hover:text-gray-700">
-            About Us
-          </Link>
+
           <div className="flex items-center space-x-1">
             <a
               href={whatsappLink}
@@ -112,9 +110,7 @@ const Navbar: React.FC = () => {
           <Link to="/blog" className="block px-4 py-2 hover:bg-gray-100">
             Blog
           </Link>
-          <Link to="/about" className="block px-4 py-2 hover:bg-gray-100">
-            About Us
-          </Link>
+
           <div className="px-4 py-2 flex items-center space-x-1 hover:bg-gray-100">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               Contact Us on WhatsApp
