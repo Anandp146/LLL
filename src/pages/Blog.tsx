@@ -80,7 +80,7 @@ const Blog: React.FC = () => {
     },
     {
       imageSrc: blogartical2,
-      title: "Designing for Mobile First",
+      title: "Engaging Digital UI/UX Strategies",
       readTime: "3 Min read",
       date: "27 May 2024",
     },
@@ -105,7 +105,7 @@ const Blog: React.FC = () => {
               Checkout the insightful blogs crafted by Laugh Logic Labs
             </p>
           </header>
-          <aside className="flex flex-col items-center   ">
+          <aside className="flex items-center mx-auto space-x-10 text-lg lg:space-x-0 lg:mx-0 lg:flex-col">
             {categories.map((category, index) => (
               <Category
                 key={index}
@@ -117,23 +117,23 @@ const Blog: React.FC = () => {
         </div>
       </div>
 
-      <section className="w-full  lg:px-8 md:px-8 px-4 justify-between">
-        <div className="flex flex-col md:flex-row gap-5">
+      <section className="justify-between w-full px-4 lg:px-8 md:px-8">
+        <div className="flex flex-col gap-5 md:flex-row">
           <Image
             src={blogImage1}
             alt="CRM Power with Web"
-            className="w-full md:w-2/3 lg:mx-16 shadow-sm md:mt-10"
+            className="w-full shadow-sm md:w-2/3 lg:mx-16 md:mt-10"
           />
-          <div className="flex flex-col lg:mx-4 mx-2 md:ml-0  md:w-full lg:w-1/3">
-            <div className="flex flex-col grow px-5 mt-1 text-black md:mt-10 md:max-w-full">
+          <div className="flex flex-col mx-2 lg:mx-4 md:ml-0 md:w-full lg:w-1/3">
+            <div className="flex flex-col px-5 mt-1 text-black grow md:mt-10 md:max-w-full">
               <div className="flex mb-4 space-x-4 text-black">
                 <span>May 30, 2024</span>
                 <span>5 min read</span>
               </div>
-              <h1 className="mt-5 md:text-4xl font-bold tracking-tighter leading-10 text-3xl md:leading-9">
+              <h1 className="mt-5 text-3xl font-bold leading-10 tracking-tighter md:text-4xl md:leading-9">
                 Unleashing CRM Power with Web
               </h1>
-              <div className="flex gap-2 self-end mt-12 text-xs max-md:mt-10 max-md:mr-2">
+              <div className="flex self-end gap-2 mt-12 text-xs max-md:mt-10 max-md:mr-2">
                 {tags.map((tag) => (
                   <Tag
                     key={tag.text}
@@ -155,26 +155,8 @@ const Blog: React.FC = () => {
         </div>
       </section>
 
-      <section className="flex lg:px-10 lg:flex-row md:flex-row flex-col items-center justify-center lg:gap-5 md:gap-3 lg:mt-16 md:mt-10 w-full text-justify md:flex-wrap  md:max-w-full">
-        <aside className="flex flex-col  items-center lg:items-start lg:justify-start justify-center self-start px-4 my-10 text-lg font-bold leading-9 text-emerald-800 mx-7 md:text-base space-x-4 mt-4 md:flex-col md:items-start md:space-x-0 md:space-y-3 lg:space-y-4 md:leading-7">
-          <h2 className="self-stretch text-center lg:text-left md:text-xl">
-            Share this article
-          </h2>
-
-          <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
-            <FaLink size={24} className="text-[#006D43]" />
-          </div>
-          <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
-            <FaLinkedin size={24} className="text-[#006D43]" />
-          </div>
-          <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
-            <FaWhatsapp size={24} className="text-[#006D43]" />
-          </div>
-          <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
-            <FaTwitter size={24} className="text-[#006D43]" />
-          </div>
-        </aside>
-        <div className="flex flex-col grow shrink-0 lg:px-20 px-10 text-base leading-9 basis-0 text-black text-opacity-80 w-full md:max-w-full">
+      <section className="flex flex-col items-center justify-center w-full text-justify lg:px-10 lg:flex-row md:flex-row lg:gap-5 md:gap-3 lg:mt-16 md:mt-10 md:flex-wrap md:max-w-full">
+        <div className="flex flex-col w-full px-10 text-base leading-9 text-black grow shrink-0 lg:px-20 basis-0 text-opacity-80 md:max-w-full">
           <p className="md:max-w-full">
             By integrating CRM with web-based solutions, companies can unlock a
             world of possibilities and gain a competitive edge. At the core of
@@ -222,7 +204,7 @@ const Blog: React.FC = () => {
             alt="Real-time data synchronization and accessibility"
             className="self-center mt-12 max-w-full aspect-[1.56] w-[544px] md:mt-10"
           />
-          <div className="mt-3 italic text-zinc-500 text-center">
+          <div className="mt-3 italic text-center text-zinc-500">
             Quality Control
           </div>
           <p className="mt-10 md:max-w-full">
@@ -236,14 +218,35 @@ const Blog: React.FC = () => {
           </p>
         </div>
       </section>
+      <div className="flex flex-col items-center self-start justify-center px-4 my-10 mt-4 space-x-4 text-lg font-bold leading-9 text-emerald-800 mx-7 md:text-base md:flex-col md:items-start md:space-x-0 md:space-y-3 lg:space-y-4 md:leading-7">
+  <div className="flex flex-col items-center w-full lg:items-center">
+    <h2 className="self-stretch mx-auto mb-4 text-center lg:mb-0 lg:text-left md:text-xl">
+      Share this article
+    </h2>
+    <div className="flex items-center justify-center mt-4 space-x-10 lg:mt-4">
+      <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
+        <FaLink size={24} className="text-[#006D43]" />
+      </div>
+      <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
+        <FaLinkedin size={24} className="text-[#006D43]" />
+      </div>
+      <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
+        <FaWhatsapp size={24} className="text-[#006D43]" />
+      </div>
+      <div className="w-10 h-10 bg-[#EDEDED] rounded-full flex items-center justify-center">
+        <FaTwitter size={24} className="text-[#006D43]" />
+      </div>
+    </div>
+  </div>
+</div>
 
-      <div className="flex-col py-20 mx-14 ">
-        <h1 className=" font-inter mx-3 lg:text-4xl my-6 text-[#006D43] text-2xl font-bold">
+      <div className="flex-col py-2 mx-10 ">
+        <h1 className=" font-inter mx-3 lg:text-4xl my-3 text-[#006D43] text-2xl font-bold">
           Checkout Trending articles
         </h1>
 
-        <div className="flex md:overflow-y-scroll  lg:overflow-x-scroll hide-scrollbar md:space-y-4 lg:space-x-4 justify-center py-4">
-          <div className="flex lg:flex-row flex-col space-x-4 ">
+        <div className="flex justify-center py-4 md:overflow-y-scroll lg:overflow-x-scroll hide-scrollbar md:space-y-4 lg:space-x-4">
+          <div className="flex flex-col space-x-4 lg:flex-row ">
             {articles.map((blog, index) => (
               <BlogCard
                 key={index}

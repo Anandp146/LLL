@@ -4,7 +4,6 @@ import bg from "../assets/bg.png";
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
 import s3 from "../assets/s3.png";
-import s from "../assets/service.png";
 
 import { FaGlobe, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import ServiceSubmit from "./ServiceSubmit";
@@ -71,11 +70,11 @@ const Section: React.FC<SectionProps> = ({
       <img
         loading="lazy"
         src={iconSrc}
-        className="object-cover absolute inset-0 size-full"
+        className="absolute inset-0 object-cover size-full"
         alt=""
       />
       <div className="flex relative flex-col mt-28 mb-52 max-w-full w-[741px] max-md:my-10">
-        <div className="flex gap-5 text-7xl font-bold tracking-tighter text-black max-md:flex-wrap max-md:text-4xl">
+        <div className="flex gap-5 font-bold tracking-tighter text-black text-7xl max-md:flex-wrap max-md:text-4xl">
           {children}
         </div>
         <p className="mt-16 text-2xl text-emerald-800 max-md:mt-10 max-md:max-w-full">
@@ -90,13 +89,13 @@ const Service: React.FC = () => {
   return (
     <main className="flex flex-col items-center w-full">
       <div
-        className="flex flex-col items-center justify-center min-h-screen w-full bg-cover bg-center p-4 md:p-8"
+        className="flex flex-col items-center justify-center w-full min-h-screen p-4 bg-center bg-cover md:p-8"
         style={{
           backgroundImage: `url(${bg})`,
         }}
       >
-        <div className="flex flex-col items-center gap-6 w-full max-w-xs md:max-w-lg lg:max-w-2xl xl:max-w-3xl text-center">
-          <h1 className="text-4xl md:text-5xl gap-3 font-bold flex items-center justify-center">
+        <div className="flex flex-col items-center w-full max-w-xs gap-6 text-center md:max-w-lg lg:max-w-2xl xl:max-w-3xl">
+          <h1 className="flex items-center justify-center gap-3 text-4xl font-bold md:text-5xl">
             Vision{" "}
             <FaChevronRight className="shrink-0 my-auto aspect-square w-[20px] md:w-[30px]" />{" "}
             Craft{" "}
@@ -110,12 +109,12 @@ const Service: React.FC = () => {
         </div>
       </div>
 
-      <div className=" mx-auto lg:-mt-28 py-8 px-4 bg-transparent flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="flex justify-center px-4 py-8 mx-auto bg-transparent lg:-mt-28">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {cardData.map((card, index) => (
             <div
               key={index}
-              className="flex flex-col  bg-transparent h-auto px-10 "
+              className="flex flex-col h-auto px-10 bg-transparent "
               style={{ maxWidth: "358px", width: "100%" }}
             >
               <img
@@ -123,8 +122,8 @@ const Service: React.FC = () => {
                 alt={card.title}
                 className="w-[358px] h-[351px] object-cover rounded-lg"
               />
-              <div className="my-4 flex  justify-between ">
-                <h3 className=" text-2xl flex flex-col font-bold">
+              <div className="flex justify-between my-4 ">
+                <h3 className="flex flex-col text-2xl font-bold ">
                   {card.title}{" "}
                   <span className="text-[#00CB7C]  font-bold">
                     {card.subtitle}
@@ -139,23 +138,6 @@ const Service: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* <div className="flex flex-row  bg-[#00cb7d36]">
-        <div className="flex flex-col">
-          <h1 className="text-[#3D3D3D] text-2xl">
-            Submit your details,
-            <span className="text-black text-3xl font-bold">
-              {" "}
-              Receive a quote in 24 hr!
-            </span>
-          </h1>
-          <img src={service} alt="" />
-        </div>
-        <div>
-
-        </div>
-      </div> */}
-
       <ServiceSubmit />
     </main>
   );

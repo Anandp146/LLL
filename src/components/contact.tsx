@@ -27,13 +27,13 @@ const ContactForm: React.FC = () => {
   return (
     <div className="mx-auto  md:py-20  bg-[#D0D0D0]">
       <div className="flex justify-center items-center h-auto">
-        <div className="flex my-10 mx-10  flex-col md:flex-row  rounded-lg overflow-hidden shadow-xl ">
+        <div className="flex my-10 mx-8 lg:mx-10  flex-col md:flex-row  rounded-lg overflow-hidden shadow-xl ">
           <img
             src={contact}
             alt="Contact Image"
-            className="w-full md:w-1/2 h-auto md:h-[400px] object-cover rounded-l-lg mb-4 md:mb-0"
+            className="w-full md:w-1/2 h-auto md:h-[400px] object-cover mb-4 md:mb-0"
           />
-          <div className="bg-white p-6 flex flex-col justify-center items-center w-full h-auto md:w-1/2 rounded-r-lg">
+          <div className="bg-white p-6 flex flex-col justify-center items-center w-full h-auto md:w-1/2">
             <h2 className="text-3xl font-sans lg:flex-row items-center flex-col gap-3 text-center justify-center font-semibold flex  mb-6">
               We would{"  "}
               <span className="text-green-600">
