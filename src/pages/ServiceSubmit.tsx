@@ -19,7 +19,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, id, type }) => {
       <input
         id={id}
         type={type}
-        className="p-3 border border-gray-300 bg-[#F0F0F0] rounded-2xl focus:outline-none focus:border-emerald-500"
+        className="p-3 rounded-full  bg-[#F0F0F0]  focus:outline-none focus:border-emerald-500"
         required
       />
     </div>
@@ -40,11 +40,11 @@ function ServiceSubmit() {
                 className="aspect-square w-[45px] mx-auto md:mx-0"
               />
               <div className="my-6 md:my-12">
-                <span className="text-3xl text-neutral-700">
+                <span className="lg:text-3xl text-2xl text-neutral-700">
                   Submit your details,{" "}
                 </span>
                 <br />
-                <span className="text-4xl text-black">
+                <span className="lg:text-4xl text-3xl text-black">
                   Receive a quote in 24 hr!
                 </span>
               </div>

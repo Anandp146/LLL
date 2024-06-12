@@ -117,9 +117,13 @@ const WorkPage: React.FC = () => {
       {workItems.map((workItem, index) => (
         <div
           key={workItem.id}
-          className="rounded-lg w-full mx-auto p-6 lg:p-10 overflow-hidden shadow-lg flex flex-col lg:flex-row items-center justify-center bg-cover bg-center"
+          className=" w-full mx-auto p-6 lg:p-10 overflow-hidden shadow-lg flex flex-col lg:flex-row items-center justify-center bg-cover bg-center"
           style={{
-            backgroundImage: `url(${index % 2 === 0 ? bgimg2 : bgimg1})`,
+            backgroundImage: `linear-gradient(#006D43, #006D43), url(${
+              index % 2 === 0 ? bgimg2 : bgimg1
+            })`,
+            backgroundSize: "200%",
+            backgroundBlendMode: "overlay",
           }}
         >
           <div className="flex flex-col lg:flex-row items-center justify-center w-full">

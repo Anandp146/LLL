@@ -7,9 +7,9 @@ import tech5 from "../assets/tech5.webp";
 import tech6 from "../assets/tech6.png";
 import tech7 from "../assets/tech7.png";
 import tech8 from "../assets/tech8.png";
-import tech9 from "../assets/tech9.png"
-import tech10 from "../assets/tech10.png"
-import tech11 from "../assets/tech11.png"
+import tech9 from "../assets/tech9.png";
+import tech10 from "../assets/tech10.png";
+import tech11 from "../assets/tech11.png";
 const techStackImages = [
   tech1,
   tech2,
@@ -28,12 +28,12 @@ const techStackImages = [
   tech8,
   tech9,
   tech10,
-  tech11
+  tech11,
 ];
 
 export const TechStack: React.FC = () => {
   return (
-    <div className="flex justify-center items-center h-26 overflow-hidden pt-10">
+    <div className="flex justify-center items-center h-26 overflow-hidden py-6">
       <div className="flex space-x-16 px-2 transition-all animate-marquee">
         {techStackImages.map((src, index) => (
           <img

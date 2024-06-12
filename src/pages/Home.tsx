@@ -17,8 +17,8 @@ export const Home: FC = () => {
   return (
     <>
       <div className="items-center justify-center lg:min-h-screen flex flex-col xl:flex-row xl:space-x-12">
-          {!isPhone && (
-        <div className="px-14 flex my-20 lg:my-0 items-center justify-center flex-col space-y-1 xl:relative lg:relative lg:mt-20 lg:px-20 py-10 pt-10">
+        {!isPhone && (
+          <div className="px-14 flex my-20 lg:my-0 items-center justify-center flex-col space-y-1 xl:relative lg:relative lg:mt-20 lg:px-20 py-10 pt-10">
             <>
               <img
                 className="w-full lg:h-[403px] xl:max-w-[700px] rounded-3xl mb-2"
@@ -36,14 +36,30 @@ export const Home: FC = () => {
                 alt="Phone Display"
               />
             </>
-        </div>
-          )}
+          </div>
+        )}
         <div className="p-1 flex-1 relative sm:text-start sm:w-full">
-          <h1 className="text-xl lg:text-2xl xl:text-6xl font-bold px-6 w-full -mt-6 xl:-mt-20 relative">
+          {/* <h1 className="text-xl lg:text-2xl xl:text-6xl font-bold px-6 w-full -mt-6 xl:-mt-20 relative">
             Elevating Brands through Digital{" "}
-            <span className="text-[#00CB7C]">Revolution
-            <img className=" hidden sm:inline ml-60 sm:mb-10" src={homeline} alt="" />
-              </span>
+            <span className="text-[#00CB7C]">
+              Revolution
+              <img
+                className=" hidden sm:inline ml-60 sm:mb-10"
+                src={homeline}
+                alt=""
+              />
+            </span>
+          </h1> */}
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold px-6 w-full lg:mt-4 mt-20 relative">
+            Elevating Brands through Digital{" "}
+            <span className="text-[#00CB7C]">
+              Revolution
+              <img
+                className="hidden sm:inline ml-60 sm:mb-10"
+                src={homeline}
+                alt=""
+              />
+            </span>
           </h1>
 
           <div className="flex lg:px-14 sm:px-10 flex-col xl:flex-row lg:items-start items-center pt-10">

@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-white px-6 md:px-12 shadow-md h-[71.35px] fixed w-full z-10">
       <div className="container mx-auto flex justify-between items-center py-3">
         <Link to="/">
-          <img src={logo} alt="Logo" className="h-12 mr-2" />
+          <img src={logo} alt="Logo" className="h-10 md:h-12 mr-2" />
         </Link>
         <div className="hidden md:flex space-x-6 items-center">
           <div className="relative" onClick={toggleDropdown}>
