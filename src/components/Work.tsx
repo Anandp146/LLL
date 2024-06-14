@@ -57,10 +57,10 @@ const Work: React.FC = () => {
   };
 
   return (
-    <div
-      className="w-full h-full flex items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgEffect})` }}
-    >
+      <div
+        className="w-full h-full flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${bgEffect})` }}
+      >
       <div className="w-full max-w-6xl mx-auto px-7 md:px-0 ">
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-center text-white font-sans p-16">
           Our{" "}
