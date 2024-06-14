@@ -1,15 +1,22 @@
 import React, { FC } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface BlogCardProps {
   imageSrc: string;
   title: string;
   readTime: string;
   date: string;
+  link: string;
 }
 
-const BlogCard: FC<BlogCardProps> = ({ imageSrc, title, readTime, date }) => (
-  
+const BlogCard: FC<BlogCardProps> = ({
+  imageSrc,
+  title,
+  readTime,
+  date,
+  link,
+}) => (
   <div className="flex-shrink-0 max-w-sm m-2 rounded shadow-lg md:w-full">
     <div className="relative">
       <img className="w-full" src={imageSrc} alt={title} />
@@ -25,9 +32,12 @@ const BlogCard: FC<BlogCardProps> = ({ imageSrc, title, readTime, date }) => (
           <div className="flex flex-row space-x-2 text-sm text-gray-600">
             <span>{readTime}</span> <span>{date}</span>
           </div>
-          <button className="flex items-center mt-4 font-bold text-green-500 lg:mt-2">
+          <Link
+            to={link}
+            className="flex items-center mt-4 font-bold text-green-500 lg:mt-2"
+          >
             Read More <FaLongArrowAltRight className="ml-2" />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

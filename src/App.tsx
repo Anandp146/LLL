@@ -17,6 +17,8 @@ import Shahi from "./pages/DetailWork/Shahi";
 import Sobuj from "./pages/DetailWork/Sobuj";
 import ThreeAi from "./pages/DetailWork/ThreeAi";
 import WebsiteForm from "./pages/WebsiteForm";
+import Blog1 from "./pages/Blogs/blog1";
+import Blog3 from "./pages/Blogs/Blog3";
 
 const App: React.FC = () => {
   // console.log(import.meta.env.VITE_SUPABASE_URL);
@@ -36,7 +38,9 @@ const App: React.FC = () => {
           <Route path="/sobujPutra" element={<Sobuj />} />
           <Route path="/threeAi" element={<ThreeAi />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog2" element={<Blog2 />} />
+          <Route path="/articles/blog1" element={<Blog1 />} />
+          <Route path="/articles/blog2" element={<Blog2 />} />
+          <Route path="/articles/blog3" element={<Blog3 />} />
           <Route path="/service" element={<Service />} />
           <Route path="/form" element={<WebsiteForm />} />
         </Routes>

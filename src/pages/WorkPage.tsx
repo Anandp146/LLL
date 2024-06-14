@@ -130,7 +130,6 @@ const WorkPage: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center">
-
         {workItems.map((workItem, index) => (
           <div
             key={workItem.id}
@@ -196,10 +195,6 @@ const WorkPage: React.FC = () => {
           {loading ? "Loading..." : "Load More"}
         </button>
       </div>
-
-      <footer className="bg-gray-800 text-white py-6 text-center">
-        © 4 Your Company. All rights reserved.
-      </footer>
     </div>
   );
 };

@@ -13,6 +13,9 @@ import { useMediaQuery } from "react-responsive";
 
 export const Home: FC = () => {
   const isPhone = useMediaQuery({ query: "(max-width: 640px)" });
+  const navService = () => {
+    window.location.href = "/service";
+  };
 
   return (
     <>
@@ -71,7 +74,10 @@ export const Home: FC = () => {
                 </span>{" "}
                 solutions, lifting your business with elegance & efficiency.
               </h2>
-              <button className="bg-green-700 text-white rounded-2xl px-4 py-3 sm:px-6 sm:py-4 lg:text-2xl text-xl w-full lg:w-3/4 flex items-center justify-between">
+              <button
+                onClick={navService}
+                className="bg-green-700 text-white rounded-2xl px-4 py-3 sm:px-6 sm:py-4 lg:text-2xl text-xl w-full lg:w-3/4 flex items-center justify-between"
+              >
                 <span>Get Quotation</span>
                 <FaArrowRight className="ml-2" />
               </button>

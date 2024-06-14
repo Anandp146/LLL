@@ -1,13 +1,15 @@
 import React from "react";
 import { FaLinkedin, FaTwitter, FaWhatsapp, FaLink } from "react-icons/fa";
-import blogbanner1 from "../assets/blogbanner1.png";
-import blogImage1 from "../assets/blogImage1.png";
-import blogcenter from "../assets/blogcenter.png";
-import blogcenter2 from "../assets/blogcenter2.png";
-import blogartical1 from "../assets/blogartical1.png";
-import blogartical2 from "../assets/blogartical2.png";
-import blogartical3 from "../assets/blogartical3.png";
-import BlogCard from "./BlogCard";
+import blogbanner1 from "../../assets/blogbanner1.png";
+import blogImage1 from "../../assets/blog2Image.png";
+import blogcenter from "../../assets/blog2 image2.png";
+import blogcenter2 from "../../assets/blog2 image3.png";
+// import blogcenter3 from "../../assets/blog1center3.png";
+// import blogcenter4 from "../../assets/blog1center4.png";
+import blogartical1 from "../../assets/blogartical1.png";
+import blogartical2 from "../../assets/blogartical2.png";
+import blogartical3 from "../../assets/blogartical3.png";
+import BlogCard from "../BlogCard";
 
 type CategoryProps = {
   name: string;
@@ -49,7 +51,7 @@ const Image: React.FC<ImageProps> = ({ src, alt, className }) => (
   <img loading="lazy" src={src} alt={alt} className={className} />
 );
 
-const Blog: React.FC = () => {
+const Blog2: React.FC = () => {
   const tags: TagProps[] = [
     { text: "Web Dev", className: "bg-stone-300" },
     { text: "Featured", className: "bg-emerald-500" },
@@ -120,7 +122,7 @@ const Blog: React.FC = () => {
           <Image
             src={blogImage1}
             alt="CRM Power with Web"
-            className="w-full shadow-sm md:w-2/3 lg:mx-16 md:mt-10"
+            className="w-full rounded-xl md:w-2/3 lg:mx-16 shadow-sm md:mt-10"
           />
           <div className="flex flex-col mx-2 lg:mx-4 md:ml-0 md:w-full lg:w-1/3">
             <div className="flex flex-col px-5 mt-1 text-black grow md:mt-10 md:max-w-full">
@@ -129,7 +131,8 @@ const Blog: React.FC = () => {
                 <span>5 min read</span>
               </div>
               <h1 className="mt-5 text-3xl font-bold leading-10 tracking-tighter md:text-4xl md:leading-9">
-                Unleashing CRM Power with Web
+                2.How Custom Software Development Can Boost Your Business
+                Efficiency?
               </h1>
               <div className="flex self-end gap-2 mt-12 text-xs max-md:mt-10 max-md:mr-2">
                 {tags.map((tag) => (
@@ -142,11 +145,12 @@ const Blog: React.FC = () => {
               </div>
               <div className="shrink-0 mt-1.5 h-px bg-emerald-800 border border-emerald-800 border-solid md:max-w-full" />
               <p className="mt-10 text-base leading-9 text-justify text-black text-opacity-80 md:max-w-full">
-                In today's digital landscape, businesses are constantly seeking
-                ways to enhance customer relationships and streamline their
-                operations. One powerful approach that has gained significant
-                traction is leveraging web technologies to supercharge Customer
-                Relationship Management (CRM) systems.
+                In today’s fast-paced business environment, efficiency is a key
+                determinant of success. Custom software development offers
+                tailored solutions that address your unique business challenges,
+                streamline operations, and enhance productivity. Here’s how
+                custom software development can significantly boost your
+                business efficiency.
               </p>
             </div>
           </div>
@@ -156,63 +160,103 @@ const Blog: React.FC = () => {
       <section className="flex flex-col items-center justify-center w-full text-justify lg:px-10 lg:flex-row md:flex-row lg:gap-5 md:gap-3 lg:mt-16 md:mt-10 md:flex-wrap md:max-w-full">
         <div className="flex flex-col w-full px-10 text-base leading-9 text-black grow shrink-0 lg:px-20 basis-0 text-opacity-80 md:max-w-full">
           <p className="md:max-w-full">
-            By integrating CRM with web-based solutions, companies can unlock a
-            world of possibilities and gain a competitive edge. At the core of
-            this powerful combination lies the ability to provide a seamless and
-            consistent experience across multiple touch points. Web-based CRM
-            solutions enable customers to interact with businesses through
-            various channels, including websites, mobile apps, and social media
-            platforms. This multichannel approach ensures that customers can
-            access the information they need, make inquiries, or initiate
-            transactions seamlessly, regardless of their preferred communication
-            channel.
+            <strong>1. Tailored to Your Specific Needs</strong>
+            <br />
+            Custom software is designed to meet the specific requirements of
+            your business. Unlike off-the-shelf solutions, which often come with
+            unnecessary features and limitations, custom software provides
+            exactly what you need. This means better alignment with your
+            workflows, improved integration with existing systems, and enhanced
+            user experience.
+          </p>
+          <p>
+            <strong>2. Scalability</strong>
+            <br />
+            As your business grows, your software needs will evolve. Custom
+            software can be designed with scalability in mind, allowing you to
+            easily add new features, users, and capabilities as needed. This
+            flexibility ensures that your software remains relevant and
+            efficient as your business expands.
           </p>
           <br />
-          <p className="md:max-w-full">
-            One of the key advantages of web-based CRM is its scalability and
-            flexibility. As businesses grow, their CRM systems can easily adapt
-            and scale to accommodate increasing customer volumes and data loads.
-            Cloud-based solutions further enhance this flexibility by
-            eliminating the need for costly on-premises infrastructure and
-            enabling seamless updates and enhancements.
-          </p>
           <Image
             src={blogcenter}
             alt="Real-time data synchronization and accessibility"
-            className="self-center mt-12 max-w-full aspect-[1.56] w-[544px] md:mt-10"
+            className="self-center rounded-xl mt-12 max-w-full aspect-[1.56] w-[544px] md:mt-10"
           />
           <p className="mt-10 md:max-w-full">
-            Moreover, web-based CRM systems empower businesses with real-time
-            data synchronization and accessibility. Sales teams can access
-            up-to-date customer information, account histories, and interaction
-            records from anywhere, at any time. This level of accessibility
-            fosters better collaboration, informed decision-making, and
-            ultimately, improved customer service.
+            <p>
+              <strong>3. Increased Productivity</strong>
+              <br />
+              By automating repetitive tasks and optimizing workflows, custom
+              software can significantly increase productivity. Employees can
+              focus on high-value activities instead of getting bogged down by
+              manual processes. This leads to faster turnaround times, higher
+              output, and improved overall efficiency.
+            </p>
+            <p>
+              <strong>4. Enhanced Data Management</strong>
+              <br />
+              Effective data management is crucial for making informed business
+              decisions. Custom software can provide advanced data collection,
+              analysis, and reporting capabilities tailored to your specific
+              needs. This ensures that you have access to accurate, real-time
+              information, enabling better decision-making and strategic
+              planning.
+            </p>
+          </p>
+          <p className="mt-10 md:max-w-full">
+            <p>
+              <strong>5. Improved Integration</strong>
+              <br />
+              Many businesses use multiple software systems to manage different
+              aspects of their operations. Custom software can be designed to
+              integrate seamlessly with your existing systems, reducing data
+              silos and ensuring a smooth flow of information across the
+              organization. This improves coordination and reduces the risk of
+              errors.
+            </p>
+            <p>
+              <strong>6. Competitive Advantage</strong>
+              <br />
+              Custom software gives you a competitive edge by providing unique
+              functionalities that off-the-shelf solutions can’t offer. It
+              allows you to implement innovative features that differentiate
+              your business from competitors, enhance customer satisfaction, and
+              drive growth.
+            </p>
             <br />
-            Additionally, web technologies open up a world of integration
-            possibilities for CRM systems. By leveraging APIs and web services,
-            businesses can seamlessly integrate their CRM with other essential
-            tools and platforms, such as marketing automation software,
-            e-commerce platforms, and business intelligence systems. This
-            integration enables a holistic view of customer data, streamlines
-            processes, and optimizes operations.
+          </p>
+
+          <p className="mt-10 md:max-w-full">
+            <p>
+              <strong>7. Cost-Effectiveness</strong>
+              <br />
+              While the initial investment in custom software development may be
+              higher than purchasing off-the-shelf solutions, it can be more
+              cost-effective in the long run. Custom software reduces the need
+              for multiple software licenses, minimizes the costs associated
+              with workarounds, and lowers the risk of downtime and
+              inefficiencies.
+            </p>
           </p>
           <Image
             src={blogcenter2}
             alt="Real-time data synchronization and accessibility"
-            className="self-center mt-12 max-w-full aspect-[1.56] w-[544px] md:mt-10"
+            className="self-center rounded-xl mt-12 max-w-full aspect-[1.56] w-[544px] md:mt-10"
           />
-          <div className="mt-3 italic text-center text-zinc-500">
-            Quality Control
-          </div>
+
           <p className="mt-10 md:max-w-full">
-            In conclusion, unleashing the power of CRM with web technologies is
-            a game-changer for businesses seeking to enhance customer
-            relationships, improve operational efficiency, and stay ahead of the
-            competition. By embracing this powerful combination, companies can
-            unlock new opportunities for growth, foster customer loyalty, and
-            position themselves as industry leaders in an ever-evolving digital
-            landscape.
+            Custom software development is a strategic investment that can lead
+            to substantial improvements in business efficiency. By providing
+            tailored solutions that address your unique needs, custom software
+            enhances productivity, data management, and overall operational
+            effectiveness. In a competitive market, this can be the key to
+            sustaining growth and achieving long-term success. Ready to explore
+            custom software solutions for your business? Let’s connect and
+            discuss how we can help you boost efficiency and drive growth.
+            #CustomSoftware #BusinessEfficiency #SoftwareDevelopment
+            #Productivity #BusinessGrowth
           </p>
         </div>
       </section>
@@ -262,4 +306,4 @@ const Blog: React.FC = () => {
   );
 };
 
-export default Blog;
+export default Blog2;

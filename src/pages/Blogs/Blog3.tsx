@@ -1,13 +1,15 @@
 import React from "react";
 import { FaLinkedin, FaTwitter, FaWhatsapp, FaLink } from "react-icons/fa";
-import blogbanner1 from "../assets/blogbanner1.png";
-import blogImage1 from "../assets/blogImage1.png";
-import blogcenter from "../assets/blogcenter.png";
-import blogcenter2 from "../assets/blogcenter2.png";
-import blogartical1 from "../assets/blogartical1.png";
-import blogartical2 from "../assets/blogartical2.png";
-import blogartical3 from "../assets/blogartical3.png";
-import BlogCard from "./BlogCard";
+import blogbanner1 from "../../assets/blogbanner1.png";
+import blogImage1 from "../../assets/blog3Image.jpg";
+import blogcenter from "../../assets/blog3 image2.jpg";
+import blogcenter2 from "../../assets/blog3 image3.jpg";
+// import blogcenter3 from "../../assets/blog1center3.png";
+// import blogcenter4 from "../../assets/blog1center4.png";
+import blogartical1 from "../../assets/blogartical1.png";
+import blogartical2 from "../../assets/blogartical2.png";
+import blogartical3 from "../../assets/blogartical3.png";
+import BlogCard from "../BlogCard";
 
 type CategoryProps = {
   name: string;
@@ -49,7 +51,7 @@ const Image: React.FC<ImageProps> = ({ src, alt, className }) => (
   <img loading="lazy" src={src} alt={alt} className={className} />
 );
 
-const Blog: React.FC = () => {
+const Blog3: React.FC = () => {
   const tags: TagProps[] = [
     { text: "Web Dev", className: "bg-stone-300" },
     { text: "Featured", className: "bg-emerald-500" },
@@ -120,7 +122,7 @@ const Blog: React.FC = () => {
           <Image
             src={blogImage1}
             alt="CRM Power with Web"
-            className="w-full shadow-sm md:w-2/3 lg:mx-16 md:mt-10"
+            className="w-full md:w-2/3 rounded-xl lg:mx-16 shadow-sm md:mt-10"
           />
           <div className="flex flex-col mx-2 lg:mx-4 md:ml-0 md:w-full lg:w-1/3">
             <div className="flex flex-col px-5 mt-1 text-black grow md:mt-10 md:max-w-full">
@@ -129,7 +131,7 @@ const Blog: React.FC = () => {
                 <span>5 min read</span>
               </div>
               <h1 className="mt-5 text-3xl font-bold leading-10 tracking-tighter md:text-4xl md:leading-9">
-                Unleashing CRM Power with Web
+                3. Choosing the Right IT Solutions for Your Business Needs.
               </h1>
               <div className="flex self-end gap-2 mt-12 text-xs max-md:mt-10 max-md:mr-2">
                 {tags.map((tag) => (
@@ -142,11 +144,13 @@ const Blog: React.FC = () => {
               </div>
               <div className="shrink-0 mt-1.5 h-px bg-emerald-800 border border-emerald-800 border-solid md:max-w-full" />
               <p className="mt-10 text-base leading-9 text-justify text-black text-opacity-80 md:max-w-full">
-                In today's digital landscape, businesses are constantly seeking
-                ways to enhance customer relationships and streamline their
-                operations. One powerful approach that has gained significant
-                traction is leveraging web technologies to supercharge Customer
-                Relationship Management (CRM) systems.
+                In the competitive landscape of today’s business world,
+                selecting the right IT solutions is pivotal to achieving
+                operational excellence and driving growth. This case study
+                illustrates how a mid-sized company, XYZ Manufacturing,
+                successfully identified and implemented IT solutions that
+                transformed their operations and supported their expansion
+                goals.
               </p>
             </div>
           </div>
@@ -156,63 +160,144 @@ const Blog: React.FC = () => {
       <section className="flex flex-col items-center justify-center w-full text-justify lg:px-10 lg:flex-row md:flex-row lg:gap-5 md:gap-3 lg:mt-16 md:mt-10 md:flex-wrap md:max-w-full">
         <div className="flex flex-col w-full px-10 text-base leading-9 text-black grow shrink-0 lg:px-20 basis-0 text-opacity-80 md:max-w-full">
           <p className="md:max-w-full">
-            By integrating CRM with web-based solutions, companies can unlock a
-            world of possibilities and gain a competitive edge. At the core of
-            this powerful combination lies the ability to provide a seamless and
-            consistent experience across multiple touch points. Web-based CRM
-            solutions enable customers to interact with businesses through
-            various channels, including websites, mobile apps, and social media
-            platforms. This multichannel approach ensures that customers can
-            access the information they need, make inquiries, or initiate
-            transactions seamlessly, regardless of their preferred communication
-            channel.
+            <strong>Background</strong>
+            <br />
+            XYZ Manufacturing, a company specializing in producing high-quality
+            industrial components, faced several challenges that hindered their
+            growth:
+            <ul>
+              <li>
+                Inefficient inventory management leading to stock discrepancies.
+              </li>
+              <li>
+                Disjointed communication between departments causing delays.
+              </li>
+              <li>
+                Security concerns with their existing data management system.
+              </li>
+            </ul>
+          </p>
+          <p>
+            <strong>Assessing Business Requirements</strong>
+            <br />
+            The first step for XYZ Manufacturing was a comprehensive assessment
+            of their business requirements. The company identified the need for:
+            <ul>
+              <li>Improved inventory tracking.</li>
+              <li>Enhanced inter-departmental communication.</li>
+              <li>Robust data security measures.</li>
+            </ul>
           </p>
           <br />
-          <p className="md:max-w-full">
-            One of the key advantages of web-based CRM is its scalability and
-            flexibility. As businesses grow, their CRM systems can easily adapt
-            and scale to accommodate increasing customer volumes and data loads.
-            Cloud-based solutions further enhance this flexibility by
-            eliminating the need for costly on-premises infrastructure and
-            enabling seamless updates and enhancements.
-          </p>
           <Image
             src={blogcenter}
             alt="Real-time data synchronization and accessibility"
-            className="self-center mt-12 max-w-full aspect-[1.56] w-[544px] md:mt-10"
+            className="self-center rounded-xl mt-12 max-w-full aspect-[1.56] w-[544px] md:mt-10"
           />
           <p className="mt-10 md:max-w-full">
-            Moreover, web-based CRM systems empower businesses with real-time
-            data synchronization and accessibility. Sales teams can access
-            up-to-date customer information, account histories, and interaction
-            records from anywhere, at any time. This level of accessibility
-            fosters better collaboration, informed decision-making, and
-            ultimately, improved customer service.
+            <p>
+              <strong>Evaluating Scalability</strong>
+              <br />
+              XYZ Manufacturing projected significant growth over the next five
+              years. They needed IT solutions that could scale with their
+              business. This requirement led them to choose a modular ERP system
+              that could be expanded as the company grew.
+            </p>
+            <p>
+              <strong>Ensuring Seamless Integration</strong>
+              <br />
+              To maintain efficient workflows, it was crucial that the new IT
+              solutions integrated smoothly with XYZ Manufacturing’s existing
+              systems. The chosen ERP system offered compatibility with their
+              current accounting software and customer relationship management
+              (CRM) system, ensuring a unified data flow across the
+              organization.
+            </p>
+          </p>
+          <p className="mt-10 md:max-w-full">
+            <p>
+              <strong>Focusing on Security</strong>
+              <br />
+              With increasing cyber threats, data security was a top priority.
+              XYZ Manufacturing selected an ERP system known for its robust
+              security features, including data encryption and multi-factor
+              authentication. This choice ensured the protection of sensitive
+              business information and compliance with industry regulations.
+            </p>
+            <p>
+              <strong>Evaluating Usability</strong>
+              <br />
+              User adoption was critical to the success of the new IT solutions.
+              XYZ Manufacturing opted for an ERP system with an intuitive
+              interface and comprehensive training resources. This minimized the
+              learning curve for employees, allowing them to quickly adapt to
+              the new system and maintain productivity.
+            </p>
             <br />
-            Additionally, web technologies open up a world of integration
-            possibilities for CRM systems. By leveraging APIs and web services,
-            businesses can seamlessly integrate their CRM with other essential
-            tools and platforms, such as marketing automation software,
-            e-commerce platforms, and business intelligence systems. This
-            integration enables a holistic view of customer data, streamlines
-            processes, and optimizes operations.
+            <p>
+              <strong>Seeking Expert Advice</strong>
+              <br />
+              XYZ Manufacturing engaged with IT consultants to gain insights
+              into the best solutions for their specific needs. The consultants
+              helped evaluate different ERP options, guided the implementation
+              process, and provided ongoing support to ensure the system’s
+              success.
+            </p>
+          </p>
+
+          <p className="mt-10 md:max-w-full">
+            <p>
+              <strong>Considering Cost and ROI</strong>
+              <br />
+              While evaluating costs, XYZ Manufacturing focused on the potential
+              return on investment (ROI). The ERP system required an initial
+              investment but promised significant long-term benefits, including
+              reduced inventory costs, improved operational efficiency, and
+              enhanced data security. The projected ROI justified the upfront
+              expense.
+            </p>
+            <p>
+              <strong>Results</strong>
+              <br />
+              After implementing the tailored IT solutions, XYZ Manufacturing
+              experienced significant improvements:
+              <ul>
+                <li>
+                  Inventory Management: Reduced stock discrepancies by 90% and
+                  optimized inventory levels.
+                </li>
+                <li>
+                  Communication: Streamlined communication between departments,
+                  reducing project delays by 40%.
+                </li>
+                <li>
+                  {" "}
+                  Data Security: Enhanced data protection and compliance with
+                  industry standards.
+                </li>
+                <li>
+                  Employee Productivity: Increased user adoption and
+                  efficiencydue to the intuitive ERP interface.
+                </li>
+              </ul>
+            </p>
           </p>
           <Image
             src={blogcenter2}
             alt="Real-time data synchronization and accessibility"
-            className="self-center mt-12 max-w-full aspect-[1.56] w-[544px] md:mt-10"
+            className="self-center rounded-xl mt-12 max-w-full aspect-[1.56] w-[544px] md:mt-10"
           />
-          <div className="mt-3 italic text-center text-zinc-500">
-            Quality Control
-          </div>
+
           <p className="mt-10 md:max-w-full">
-            In conclusion, unleashing the power of CRM with web technologies is
-            a game-changer for businesses seeking to enhance customer
-            relationships, improve operational efficiency, and stay ahead of the
-            competition. By embracing this powerful combination, companies can
-            unlock new opportunities for growth, foster customer loyalty, and
-            position themselves as industry leaders in an ever-evolving digital
-            landscape.
+            This case study of XYZ Manufacturing highlights the importance of
+            choosing the right IT solutions tailored to specific business needs.
+            By assessing requirements, ensuring scalability, focusing on
+            security, and considering usability and ROI, businesses can achieve
+            significant improvements in efficiency and support their growth
+            objectives. Ready to transform your business with the right IT
+            solutions? Contact us to discuss how we can help you achieve similar
+            success. #ITSolutions #BusinessGrowth #CaseStudy #ERP
+            #OperationalEfficiency #DataSecurity
           </p>
         </div>
       </section>
@@ -262,4 +347,4 @@ const Blog: React.FC = () => {
   );
 };
 
-export default Blog;
+export default Blog3;
